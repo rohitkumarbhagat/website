@@ -2506,9 +2506,27 @@ Include 3 relevant follow-up questions using this format:
         localStorage.setItem(KB_DEFAULT_VERSION, 'true');  // Mark migration complete
       }
 
+      // Migration: Clear stale localhost proxy URLs when accessing from external IP
+      // This ensures users get the correct dynamic URL based on their access method
+      const PROXY_URL_VERSION = 'proxy_url_v3';
+      if (!localStorage.getItem(PROXY_URL_VERSION)) {
+        const savedProxyUrl = localStorage.getItem('mcp_proxy_url') || '';
+        const isLocalAccess = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const hasStalelocalhost = savedProxyUrl.includes('localhost') || savedProxyUrl.includes('127.0.0.1');
+
+        // Clear if: accessing from external IP but have localhost URL cached
+        if (!isLocalAccess && hasStalelocalhost) {
+          console.log('Clearing stale localhost proxy URL:', savedProxyUrl);
+          localStorage.removeItem('mcp_proxy_url');
+        }
+        localStorage.setItem(PROXY_URL_VERSION, 'true');
+      }
+
       // State
       let geminiApiKey = localStorage.getItem('gemini_api_key') || '';
-      let mcpProxyUrl = localStorage.getItem('mcp_proxy_url') || config.defaults?.mcpProxyUrl || 'http://localhost:5001';
+      // Dynamic default: uses same hostname as page (works for localhost AND public IPs)
+      const dynamicProxyUrl = `http://${window.location.hostname}:5001`;
+      let mcpProxyUrl = localStorage.getItem('mcp_proxy_url') || config.defaults?.mcpProxyUrl || dynamicProxyUrl;
       let mcpEnabled = localStorage.getItem('mcp_enabled') !== 'false';
       let kbStoreId = localStorage.getItem('kb_store_id') || config.defaults?.kbStoreId || 'fileSearchStores/msmepolicies-8pibj9lwmrws';
       // Knowledge base is OFF by default - only enable if explicitly set to 'true' in localStorage
@@ -3425,9 +3443,9 @@ Include 3 relevant follow-up questions using this format:
           const data = await response.json();
           if (data.success && data.config) {
             // Use proxy_url from config if provided (allows central configuration)
+            // NOTE: Don't save to localStorage - backend config is source of truth
             if (data.config.proxy_url) {
               mcpProxyUrl = data.config.proxy_url;
-              localStorage.setItem('mcp_proxy_url', mcpProxyUrl);
               console.log('Using proxy_url from backend config:', mcpProxyUrl);
               // Update the input field if it exists
               const mcpUrlInput = document.getElementById('mcp-url-input');
