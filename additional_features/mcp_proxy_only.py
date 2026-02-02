@@ -686,6 +686,7 @@ def get_config_endpoint():
 
     # Return config without sensitive data
     safe_config = {
+        "proxy_url": config.get("proxy_url", f"http://localhost:{PROXY_PORT}"),
         "gemini": {
             "api_base": config.get("gemini", {}).get("api_base", ""),
             "mcp_model": config.get("gemini", {}).get("mcp_model", "gemini-3-flash-preview"),

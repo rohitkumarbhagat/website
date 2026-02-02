@@ -1,4 +1,5 @@
 {
+  "proxy_url": "http://localhost:5001",
   "gemini": {
     "api_keys": [
       "YOUR_GEMINI_API_KEY_1",

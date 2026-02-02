@@ -130,6 +130,33 @@ MAPS_API_KEY=your-maps-api-key
 DEBUG=true
 ```
 
+### Backend Proxy Configuration (additional_features/config.json)
+
+For **Backend Mode** (where Gemini API calls go through the proxy server), create `additional_features/config.json`:
+
+```json
+{
+  "proxy_url": "http://YOUR_VM_PUBLIC_IP:5001",
+  "gemini": {
+    "api_keys": ["YOUR_GEMINI_API_KEY_1", "YOUR_GEMINI_API_KEY_2"],
+    "mcp_model": "gemini-3-flash-preview",
+    "kb_model": "gemini-3-flash-preview"
+  },
+  "mcp": {
+    "enabled": true
+  },
+  "knowledge_base": {
+    "enabled": false
+  }
+}
+```
+
+**Important:** The `proxy_url` should be the **public URL** that browsers can reach:
+- For VM deployment: `http://YOUR_VM_PUBLIC_IP:5001`
+- For local development: `http://localhost:5001`
+
+The frontend dynamically determines the proxy URL using `window.location.hostname`, but `proxy_url` in config.json takes precedence when set.
+
 ### Docker Run Options Explained
 
 | Option | Description |

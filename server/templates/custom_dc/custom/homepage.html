@@ -40,7 +40,8 @@
         GEMINI_API_BASE: 'https://generativelanguage.googleapis.com/v1beta/models'
       },
       defaults: {
-        mcpProxyUrl: 'http://localhost:5001',
+        // Dynamic: uses same hostname as the page (works for localhost AND public IPs)
+        mcpProxyUrl: `http://${window.location.hostname}:5001`,
         kbStoreId: 'fileSearchStores/msmepolicies-8pibj9lwmrws',
         kbEnabled: false  // Knowledge base is OFF by default
       },
@@ -3423,10 +3424,21 @@ Include 3 relevant follow-up questions using this format:
 
           const data = await response.json();
           if (data.success && data.config) {
+            // Use proxy_url from config if provided (allows central configuration)
+            if (data.config.proxy_url) {
+              mcpProxyUrl = data.config.proxy_url;
+              localStorage.setItem('mcp_proxy_url', mcpProxyUrl);
+              console.log('Using proxy_url from backend config:', mcpProxyUrl);
+              // Update the input field if it exists
+              const mcpUrlInput = document.getElementById('mcp-url-input');
+              if (mcpUrlInput) mcpUrlInput.value = mcpProxyUrl;
+            }
+
             // Update backend config info display
             const configInfo = document.getElementById('backend-config-info');
             if (configInfo) {
               configInfo.innerHTML = `
+                <div><strong>Proxy:</strong> ${data.config.proxy_url || mcpProxyUrl}</div>
                 <div><strong>Model:</strong> ${data.config.gemini?.mcp_model || 'Not set'}</div>
                 <div><strong>MCP:</strong> ${data.config.mcp?.enabled ? 'Enabled' : 'Disabled'}</div>
                 <div><strong>KB:</strong> ${data.config.knowledge_base?.enabled ? 'Enabled' : 'Disabled'}</div>
