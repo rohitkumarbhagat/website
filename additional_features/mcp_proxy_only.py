@@ -1072,8 +1072,38 @@ def execute_mcp_tool_loop(
     return tool_results_text, tool_calls_list, "Max tool iterations reached"
 
 
+def get_api_key_filestore_mapping() -> dict:
+    """Build mapping of API key -> filestore from config.
+
+    Each API key in gemini.api_keys maps to the filestore at the same index
+    in gemini.filestores array.
+
+    Returns:
+        dict mapping api_key -> filestore_id
+    """
+    config = load_config()
+    gemini_config = config.get("gemini", {})
+
+    api_keys = gemini_config.get("api_keys", [])
+    filestores = gemini_config.get("filestores", [])
+
+    # Build the mapping - each key maps to filestore at same index
+    mapping = {}
+    for i, key in enumerate(api_keys):
+        if i < len(filestores):
+            mapping[key] = filestores[i]
+        else:
+            # Fallback to legacy store_id if no filestore configured for this key
+            legacy_store = config.get("knowledge_base", {}).get("store_id", "")
+            mapping[key] = legacy_store
+
+    return mapping
+
+
 def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None) -> dict:
     """Execute Knowledge Base query using file search with key rotation.
+
+    Each API key automatically uses its paired filestore from the config mapping.
 
     Returns:
         dict with keys:
@@ -1088,9 +1118,12 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
 
     kb_prompt = config.get("prompts", {}).get("kb", "")
     kb_model = config.get("gemini", {}).get("kb_model", "gemini-3-flash-preview")
-    store_id = kb_config.get("store_id", "")
 
-    if not store_id:
+    # Get API key -> filestore mapping
+    key_filestore_map = get_api_key_filestore_mapping()
+
+    if not key_filestore_map:
+        logger.warning("No API key to filestore mapping configured")
         return {"response": "", "sources": []}
 
     # Get all available keys
@@ -1104,29 +1137,37 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
     keys_to_try = all_keys.copy()
     random.shuffle(keys_to_try)
 
-    payload = {
-        "contents": [{"role": "user", "parts": [{"text": user_message}]}],
-        "systemInstruction": {"parts": [{"text": inject_datetime(kb_prompt)}]},
-        "generationConfig": {"temperature": 0.3},
-        "tools": [{
-            "fileSearch": {
-                "dynamicFileSearchConfig": {
-                    "mode": "MODE_DYNAMIC",
-                    "dynamicThreshold": 0.3
-                }
-            }
-        }],
-        "toolConfig": {
-            "fileSearch": {
-                "vectorStore": {"storeResourceId": store_id}
-            }
-        }
-    }
-
     last_error = None
     attempt_count = 0
 
     for api_key in keys_to_try:
+        # Get the filestore for this specific API key
+        store_id = key_filestore_map.get(api_key, "")
+        if not store_id:
+            logger.warning(f"No filestore configured for API key, skipping...")
+            continue
+
+        logger.info(f"KB query using filestore: {store_id[:50]}...")
+
+        # Build payload with this key's filestore
+        payload = {
+            "contents": [{"role": "user", "parts": [{"text": user_message}]}],
+            "systemInstruction": {"parts": [{"text": inject_datetime(kb_prompt)}]},
+            "generationConfig": {"temperature": 0.3},
+            "tools": [{
+                "fileSearch": {
+                    "dynamicFileSearchConfig": {
+                        "mode": "MODE_DYNAMIC",
+                        "dynamicThreshold": 0.3
+                    }
+                }
+            }],
+            "toolConfig": {
+                "fileSearch": {
+                    "vectorStore": {"storeResourceId": store_id}
+                }
+            }
+        }
         attempt_count += 1
         start_time = time.time()
 

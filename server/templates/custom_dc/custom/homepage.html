@@ -552,43 +552,43 @@ Use numbered citations inline [1], [2], [3] and list all sources at the end.
 - Reuse the same number if citing the same source again
 
 **How to identify and number sources:**
+
+**PRIORITY 1 - POLICY INFORMATION (from Knowledge Base):**
+If the context contains **POLICY INFORMATION [Sources: ...]**, use the ACTUAL document names listed there.
+- Example: If context says \`[Sources: PMEGP Guidelines 2024.pdf, MSME Scheme Handbook.pdf]\`
+- Then cite as: [1] PMEGP Guidelines 2024.pdf, [2] MSME Scheme Handbook.pdf
+- Do NOT replace these with MOSPI/DGCIS URLs - use the actual document names!
+
+**PRIORITY 2 - DATA RESULTS (from Data Commons):**
+Only for statistical data from DATA RESULTS section:
 - MOSPI → for CPI, GDP, GSDP, ASI, NII data
 - DGCIS → for export/import data
 - Census of India → for population/demographic data
 - RBI → for financial/banking data
 - Data Commons → if source unclear
-- [Document Name] → for Knowledge Base/policy docs
 
-### Source URLs for Citations (USE THESE EXACT URLs)
+### Source URLs for Citations
 
-When citing sources in the Sources section, use markdown hyperlinks with these URLs:
+**For Policy Documents (Knowledge Base):** Use the actual document names from the context - do NOT use URLs.
 
-**Data Commons Sources:**
+**For Statistical Data (Data Commons):** Use markdown hyperlinks with these URLs:
 - MOSPI (CPI, GDP, GSDP, ASI, NII): https://esankhyiki.mospi.gov.in/
 - DGCIS (Export/Import data): https://tradestat.commerce.gov.in/
 
-**Specific Data URLs:**
-- CPI Data: https://esankhyiki.mospi.gov.in/macroindicators?product=cpi
-- GDP Data: https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=Gross+Domestic+Product
-- GSDP Data: https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=GSDP
-- ASI Data: https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&product=ASI
-- NII Data: https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&product=Nutritional+Intake+in+India
-- Commodity-wise Export: https://tradestat.commerce.gov.in/eidb/commodity_wise_export
-- Country-wise Export: https://tradestat.commerce.gov.in/eidb/country_wise_export
-- Census of India: https://censusindia.gov.in/
-- Data Commons: https://datacommons.org/
-
 **End of Response - Sources Section (MANDATORY):**
-ALWAYS end your response with a Sources section using markdown hyperlinks:
+ALWAYS end your response with a Sources section.
+
+### Example Response (Policy Query - from KB):
+
+"The *PMEGP* scheme provides subsidies of **15-35%** for setting up micro-enterprises [1]. The maximum project cost is **₹50 Lakhs** for manufacturing and **₹20 Lakhs** for service sector [1].
 
 ---
 **Sources:**
-[1] [MOSPI](https://esankhyiki.mospi.gov.in/) - Ministry of Statistics and Programme Implementation
-[2] [DGCIS](https://tradestat.commerce.gov.in/) - Directorate General of Commercial Intelligence and Statistics
+[1] PMEGP Guidelines 2024.pdf"
 
-### Example Response
+### Example Response (Data Query - from Data Commons):
 
-"Maharashtra's GSDP in FY 2024-25 was **Rs 45,31,518.42 Crore** [1]. The state has **12,500** registered factories [1] and contributed **Rs 2,380 Crore** in exports [2].
+"Maharashtra's GSDP in FY 2024-25 was **Rs 45,31,518.42 Crore** [1]. The state contributed **Rs 2,380 Crore** in exports [2].
 
 ---
 **Sources:**
