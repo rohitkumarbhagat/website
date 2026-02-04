@@ -1013,10 +1013,7 @@ def execute_mcp_tool_loop(
 
         # If no function calls, we're done
         if not function_calls:
-            tool_results_text = "\n\n".join([
-                f"Tool: {tc['name']}\nResult: {tc['result']}"
-                for tc in tool_calls_list
-            ])
+            tool_results_text = "\n\n".join(all_tool_results)
             if session_logger:
                 session_logger.log("MCP_LOOP_COMPLETE", {
                     "iterations_used": iteration + 1,
