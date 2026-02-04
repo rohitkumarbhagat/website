@@ -95,6 +95,10 @@ export CUSTOM_DC_URL="http://localhost:8080"
 python3 -m uv tool run datacommons-mcp serve http --port 3000  --host 0.0.0.0 
 
 --skip-api-key-validation
+
+
+  python -m uv tool run --from datacommons-mcp==1.1.4 datacommons-mcp serve http --port 3000 --host 0.0.0.0
+
 ```
 
 ### Terminal 3: MCP Proxy Server
