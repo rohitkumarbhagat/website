@@ -29,11 +29,13 @@ Usage:
 import copy
 import json
 import logging
+import queue
 import random
 import re
 import os
 import subprocess
 import sys
+import threading
 import time
 import uuid
 from datetime import datetime
@@ -700,8 +702,16 @@ def get_config_endpoint():
     return jsonify({"success": True, "config": safe_config})
 
 
-def build_thinking_config(thinking_value: str) -> dict:
-    """Build thinking configuration for Gemini 3 models."""
+def build_thinking_config(thinking_value: str, include_thoughts: bool = False) -> dict:
+    """Build thinking configuration for Gemini 3 models.
+
+    Args:
+        thinking_value: Thinking level ('minimal', 'low', 'medium', 'high') or budget number
+        include_thoughts: If True, includes thought summaries in the response
+
+    Returns:
+        dict: thinkingConfig for Gemini generationConfig
+    """
     level_map = {
         "minimal": 128,
         "low": 1024,
@@ -718,11 +728,16 @@ def build_thinking_config(thinking_value: str) -> dict:
         except ValueError:
             budget = 1024  # default to low
 
-    return {
+    config = {
         "thinkingConfig": {
             "thinkingBudget": budget
         }
     }
+
+    if include_thoughts:
+        config["thinkingConfig"]["includeThoughts"] = True
+
+    return config
 
 
 def gemini_request(
@@ -734,7 +749,8 @@ def gemini_request(
     thinking_level: str = None,
     response_schema: dict = None,
     stream: bool = False,
-    session_logger: Optional[SessionLogger] = None
+    session_logger: Optional[SessionLogger] = None,
+    include_thoughts: bool = False
 ) -> Generator | dict:
     """Make a request to the Gemini API with key rotation and retry.
 
@@ -748,10 +764,13 @@ def gemini_request(
         response_schema: Optional JSON schema for structured output
         stream: If True, returns a generator for SSE streaming
         session_logger: Optional SessionLogger for comprehensive logging
+        include_thoughts: If True (and stream=True), yields dicts with 'type' and 'content'
+                         for both thoughts and text. If False, yields plain text strings.
 
     Returns:
         If stream=False: dict with response
-        If stream=True: Generator yielding text chunks
+        If stream=True and include_thoughts=False: Generator yielding text chunks (str)
+        If stream=True and include_thoughts=True: Generator yielding dicts {'type': 'thought'|'text', 'content': str}
     """
     config = load_config()
     api_base = config.get("gemini", {}).get("api_base", "https://generativelanguage.googleapis.com/v1beta/models")
@@ -782,7 +801,10 @@ def gemini_request(
         payload["tools"] = [{"functionDeclarations": tools}]
 
     if thinking_level:
-        payload["generationConfig"].update(build_thinking_config(thinking_level))
+        # Enable includeThoughts in API if caller wants thought streaming
+        payload["generationConfig"].update(
+            build_thinking_config(thinking_level, include_thoughts=(stream and include_thoughts))
+        )
 
     if response_schema:
         payload["generationConfig"]["responseMimeType"] = "application/json"
@@ -844,7 +866,7 @@ def gemini_request(
                     last_error = f"Server error ({response.status_code})"
                     logger.warning(f"Server error {response.status_code}, switching to next key...")
                     continue  # Try next key
-                return _stream_gemini_response(response, session_logger)
+                return _stream_gemini_response(response, session_logger, return_dicts=include_thoughts)
             else:
                 response = requests.post(
                     url,
@@ -893,10 +915,22 @@ def gemini_request(
     return {"error": error_msg}
 
 
-def _stream_gemini_response(response, session_logger: Optional[SessionLogger] = None) -> Generator:
-    """Parse streaming response from Gemini API."""
+def _stream_gemini_response(response, session_logger: Optional[SessionLogger] = None, return_dicts: bool = False) -> Generator:
+    """Parse streaming response from Gemini API.
+
+    Args:
+        response: The requests response object with streaming enabled
+        session_logger: Optional SessionLogger for logging
+        return_dicts: If True, yields dicts with 'type' and 'content' keys
+                      for both thoughts and text. If False, yields plain text strings.
+
+    Yields:
+        If return_dicts=True: {'type': 'thought'|'text', 'content': str}
+        If return_dicts=False: str (text only, for backward compatibility)
+    """
     start_time = time.time()
     total_text = ""
+    total_thoughts = ""
 
     for line in response.iter_lines():
         if line:
@@ -909,8 +943,19 @@ def _stream_gemini_response(response, session_logger: Optional[SessionLogger] = 
                         if 'content' in candidate and 'parts' in candidate['content']:
                             for part in candidate['content']['parts']:
                                 if 'text' in part:
-                                    total_text += part['text']
-                                    yield part['text']
+                                    # Check if this is a thought summary or regular text
+                                    is_thought = part.get('thought', False)
+                                    if is_thought:
+                                        total_thoughts += part['text']
+                                        if return_dicts:
+                                            yield {'type': 'thought', 'content': part['text']}
+                                        # Skip thoughts in legacy mode (return_dicts=False)
+                                    else:
+                                        total_text += part['text']
+                                        if return_dicts:
+                                            yield {'type': 'text', 'content': part['text']}
+                                        else:
+                                            yield part['text']
                 except json.JSONDecodeError:
                     continue
 
@@ -919,8 +964,202 @@ def _stream_gemini_response(response, session_logger: Optional[SessionLogger] = 
         duration_ms = (time.time() - start_time) * 1000
         session_logger.log("GEMINI_STREAM_COMPLETE", {
             "duration_ms": round(duration_ms, 2),
-            "total_text_length": len(total_text)
+            "total_text_length": len(total_text),
+            "total_thoughts_length": len(total_thoughts)
         })
+
+
+def gemini_request_with_thought_streaming(
+    messages: list,
+    system_instruction: str,
+    model: str,
+    tools: list = None,
+    temperature: float = 0.3,
+    thinking_level: str = None,
+    response_schema: dict = None,
+    session_logger: Optional[SessionLogger] = None,
+    thought_callback: callable = None
+) -> dict:
+    """Make a streaming Gemini request, calling thought_callback for thoughts but returning complete response.
+
+    This enables thought streaming for reduced TTFT while still getting the
+    complete response needed for tool call processing.
+
+    Args:
+        messages: Conversation history in Gemini format
+        system_instruction: System prompt
+        model: Model name (e.g., 'gemini-3-flash-preview')
+        tools: Optional list of function declarations
+        temperature: Sampling temperature
+        thinking_level: Optional thinking budget level
+        response_schema: Optional JSON schema for structured output
+        session_logger: Optional SessionLogger for comprehensive logging
+        thought_callback: Optional callback function called with each thought chunk.
+                         Signature: callback(thought_text: str) -> None
+
+    Returns:
+        dict: Complete response (same format as non-streaming gemini_request)
+    """
+    config = load_config()
+    api_base = config.get("gemini", {}).get("api_base", "https://generativelanguage.googleapis.com/v1beta/models")
+
+    # Get all available keys
+    all_keys = get_api_keys()
+    if not all_keys:
+        return {"error": "No Gemini API keys configured in config.json"}
+
+    # Shuffle keys for random order
+    keys_to_try = all_keys.copy()
+    random.shuffle(keys_to_try)
+
+    # Build payload
+    payload = {
+        "contents": messages,
+        "generationConfig": {
+            "temperature": temperature,
+        }
+    }
+
+    if system_instruction:
+        payload["systemInstruction"] = {
+            "parts": [{"text": inject_datetime(system_instruction)}]
+        }
+
+    if tools:
+        payload["tools"] = [{"functionDeclarations": tools}]
+
+    if thinking_level:
+        # Enable includeThoughts for streaming thought summaries
+        payload["generationConfig"].update(
+            build_thinking_config(thinking_level, include_thoughts=True)
+        )
+
+    if response_schema:
+        payload["generationConfig"]["responseMimeType"] = "application/json"
+        payload["generationConfig"]["responseSchema"] = response_schema
+
+    # Log request
+    if session_logger:
+        session_logger.log_gemini_request(model, "streamGenerateContent", {
+            "messages_count": len(messages),
+            "has_tools": bool(tools),
+            "tool_count": len(tools) if tools else 0,
+            "temperature": temperature,
+            "thinking_level": thinking_level,
+            "include_thoughts": True,
+            "total_keys_available": len(all_keys)
+        })
+
+    last_error = None
+    attempt_count = 0
+
+    for api_key in keys_to_try:
+        attempt_count += 1
+
+        # Build URL for streaming
+        url = f"{api_base}/{model}:streamGenerateContent?key={api_key}&alt=sse"
+
+        # Log retry attempt (if not first attempt)
+        if attempt_count > 1 and session_logger:
+            session_logger.log("GEMINI_KEY_ROTATION", {
+                "attempt": attempt_count,
+                "total_keys": len(all_keys),
+                "reason": str(last_error)
+            })
+
+        start_time = time.time()
+
+        try:
+            response = requests.post(
+                url,
+                json=payload,
+                headers={"Content-Type": "application/json"},
+                stream=True,
+                timeout=120
+            )
+
+            # Check for rate limit before streaming
+            if response.status_code == 429:
+                last_error = "Rate limited (429)"
+                logger.warning(f"API key rate limited, switching to next key...")
+                continue
+            if response.status_code in [500, 503]:
+                last_error = f"Server error ({response.status_code})"
+                logger.warning(f"Server error {response.status_code}, switching to next key...")
+                continue
+
+            # Collect response while streaming thoughts
+            collected_text = ""
+            collected_function_calls = []
+            collected_thoughts = ""
+
+            for line in response.iter_lines():
+                if line:
+                    line_str = line.decode('utf-8')
+                    if line_str.startswith('data: '):
+                        try:
+                            data = json.loads(line_str[6:])
+                            if 'candidates' in data and data['candidates']:
+                                candidate = data['candidates'][0]
+                                if 'content' in candidate and 'parts' in candidate['content']:
+                                    for part in candidate['content']['parts']:
+                                        if 'functionCall' in part:
+                                            collected_function_calls.append(part)
+                                        elif 'text' in part:
+                                            is_thought = part.get('thought', False)
+                                            if is_thought:
+                                                collected_thoughts += part['text']
+                                                if thought_callback:
+                                                    thought_callback(part['text'])
+                                            else:
+                                                collected_text += part['text']
+                        except json.JSONDecodeError:
+                            continue
+
+            # Build response in same format as non-streaming
+            result_parts = []
+            for fc in collected_function_calls:
+                result_parts.append(fc)
+            if collected_text:
+                result_parts.append({"text": collected_text})
+
+            result = {
+                "candidates": [{
+                    "content": {
+                        "parts": result_parts,
+                        "role": "model"
+                    }
+                }]
+            }
+
+            # Log response
+            if session_logger:
+                duration_ms = (time.time() - start_time) * 1000
+                session_logger.log_gemini_response(model, result, duration_ms)
+                if collected_thoughts:
+                    session_logger.log("THOUGHTS_STREAMED", {
+                        "thoughts_length": len(collected_thoughts)
+                    })
+
+            return result
+
+        except requests.exceptions.Timeout:
+            last_error = "Request timeout"
+            logger.warning(f"Request timeout, trying next key...")
+            continue
+        except Exception as e:
+            last_error = str(e)
+            logger.error(f"Gemini API error: {e}")
+            if session_logger:
+                session_logger.log_error("GEMINI_API_ERROR", str(e), {"attempt": attempt_count, "model": model})
+            continue
+
+    # All keys exhausted
+    error_msg = f"All {len(all_keys)} API keys failed. Last error: {last_error}"
+    logger.error(error_msg)
+    if session_logger:
+        session_logger.log_error("GEMINI_ALL_KEYS_EXHAUSTED", error_msg, {"total_keys": len(all_keys)})
+    return {"error": error_msg}
 
 
 def execute_mcp_tool_loop(
@@ -928,9 +1167,10 @@ def execute_mcp_tool_loop(
     history: list,
     max_iterations: int = 5,
     session_logger: Optional[SessionLogger] = None,
-    effective_config: dict = None
+    effective_config: dict = None,
+    thought_callback: callable = None
 ) -> tuple:
-    """Execute the MCP tool calling loop.
+    """Execute the MCP tool calling loop with optional thought streaming.
 
     Args:
         user_message: The user's query
@@ -938,6 +1178,8 @@ def execute_mcp_tool_loop(
         max_iterations: Maximum tool calling iterations
         session_logger: Optional SessionLogger for comprehensive logging
         effective_config: Optional config dict with query param overrides applied
+        thought_callback: Optional callback for streaming thought chunks.
+                         Signature: callback(thought_text: str) -> None
 
     Returns:
         tuple: (tool_results_text, tool_calls_list, final_response_text)
@@ -975,15 +1217,15 @@ def execute_mcp_tool_loop(
         if session_logger:
             session_logger.log("MCP_LOOP_ITERATION", {"iteration": iteration + 1, "max": max_iterations})
 
-        response = gemini_request(
+        response = gemini_request_with_thought_streaming(
             messages=contents,
             system_instruction=mcp_prompt,
             model=mcp_model,
             tools=gemini_tools,
             temperature=1.0,
             thinking_level=thinking_level,
-            stream=False,
-            session_logger=session_logger
+            session_logger=session_logger,
+            thought_callback=thought_callback
         )
 
         if "error" in response:
@@ -1097,10 +1339,16 @@ def get_api_key_filestore_mapping() -> dict:
     return mapping
 
 
-def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None) -> dict:
-    """Execute Knowledge Base query using file search with key rotation.
+def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None, thought_callback: callable = None) -> dict:
+    """Execute Knowledge Base query using file search with key rotation and thought streaming.
 
     Each API key automatically uses its paired filestore from the config mapping.
+
+    Args:
+        user_message: The user's query
+        session_logger: Optional SessionLogger for logging
+        thought_callback: Optional callback for streaming thought chunks.
+                         Signature: callback(thought_text: str) -> None
 
     Returns:
         dict with keys:
@@ -1146,11 +1394,14 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
 
         logger.info(f"KB query using filestore: {store_id[:50]}...")
 
-        # Build payload with this key's filestore
+        # Build payload with this key's filestore and thinking config
+        thinking_level = config.get("thinking", {}).get("kb_level", "low")
         payload = {
             "contents": [{"role": "user", "parts": [{"text": user_message}]}],
             "systemInstruction": {"parts": [{"text": inject_datetime(kb_prompt)}]},
-            "generationConfig": {"temperature": 0.3},
+            "generationConfig": {
+                "temperature": 0.3,
+            },
             "tools": [{
                 "fileSearch": {
                     "dynamicFileSearchConfig": {
@@ -1165,6 +1416,13 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
                 }
             }
         }
+
+        # Add thinking config with includeThoughts for streaming
+        if thinking_level:
+            payload["generationConfig"].update(
+                build_thinking_config(thinking_level, include_thoughts=True)
+            )
+
         attempt_count += 1
         start_time = time.time()
 
@@ -1177,11 +1435,13 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
             })
 
         try:
-            url = f"{api_base}/{kb_model}:generateContent?key={api_key}"
+            # Use streaming endpoint to get thoughts in real-time
+            url = f"{api_base}/{kb_model}:streamGenerateContent?key={api_key}&alt=sse"
             response = requests.post(
                 url,
                 json=payload,
                 headers={"Content-Type": "application/json"},
+                stream=True,
                 timeout=60
             )
 
@@ -1197,34 +1457,53 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
                 logger.warning(f"KB server error {response.status_code}, switching to next key...")
                 continue
 
-            data = response.json()
-
-            candidates = data.get("candidates", [])
+            # Collect response while streaming thoughts
             result_text = ""
             sources = []
+            collected_thoughts = ""
+            grounding_metadata = {}
 
-            if candidates:
-                candidate = candidates[0]
-                parts = candidate.get("content", {}).get("parts", [])
-                result_text = "".join([p.get("text", "") for p in parts])
+            for line in response.iter_lines():
+                if line:
+                    line_str = line.decode('utf-8')
+                    if line_str.startswith('data: '):
+                        try:
+                            data = json.loads(line_str[6:])
+                            if 'candidates' in data and data['candidates']:
+                                candidate = data['candidates'][0]
 
-                # Extract grounding metadata for source citations
-                grounding_metadata = candidate.get("groundingMetadata", {})
-                grounding_chunks = grounding_metadata.get("groundingChunks", [])
+                                # Extract grounding metadata when available
+                                if 'groundingMetadata' in candidate:
+                                    grounding_metadata = candidate['groundingMetadata']
 
-                seen_titles = set()
-                for chunk in grounding_chunks:
-                    retrieved_context = chunk.get("retrievedContext", {})
-                    if retrieved_context:
-                        title = retrieved_context.get("title", "Unknown")
-                        uri = retrieved_context.get("uri", "")
-                        # Deduplicate by title
-                        if title not in seen_titles:
-                            seen_titles.add(title)
-                            sources.append({
-                                "title": title,
-                                "uri": uri
-                            })
+                                if 'content' in candidate and 'parts' in candidate['content']:
+                                    for part in candidate['content']['parts']:
+                                        if 'text' in part:
+                                            is_thought = part.get('thought', False)
+                                            if is_thought:
+                                                collected_thoughts += part['text']
+                                                if thought_callback:
+                                                    thought_callback(part['text'])
+                                            else:
+                                                result_text += part['text']
+                        except json.JSONDecodeError:
+                            continue
+
+            # Extract source citations from grounding metadata
+            grounding_chunks = grounding_metadata.get("groundingChunks", [])
+            seen_titles = set()
+            for chunk in grounding_chunks:
+                retrieved_context = chunk.get("retrievedContext", {})
+                if retrieved_context:
+                    title = retrieved_context.get("title", "Unknown")
+                    uri = retrieved_context.get("uri", "")
+                    # Deduplicate by title
+                    if title not in seen_titles:
+                        seen_titles.add(title)
+                        sources.append({
+                            "title": title,
+                            "uri": uri
+                        })
 
             # Log KB query
             if session_logger:
@@ -1232,6 +1511,8 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
                 session_logger.log_kb_query(user_message, result_text, duration_ms)
                 if sources:
                     session_logger.log("KB_SOURCES", {"sources": sources})
+                if collected_thoughts:
+                    session_logger.log("KB_THOUGHTS_STREAMED", {"thoughts_length": len(collected_thoughts)})
 
             return {"response": result_text, "sources": sources}
 
@@ -1415,6 +1696,13 @@ def chat_stream():
         else:
             session_logger.log("MCP_NO_TOOLS", {"session_id": session_id})
 
+        # Create thought queue for streaming thoughts from background threads
+        thought_queue = queue.Queue()
+
+        def thought_callback(thought_text: str, phase: str):
+            """Callback to put thoughts into queue for streaming."""
+            thought_queue.put({'thought': thought_text, 'phase': phase})
+
         # Phase 1: MCP Tools
         mcp_enabled = effective_config.get("mcp", {}).get("enabled", True)
         mcp_results = ""
@@ -1423,10 +1711,39 @@ def chat_stream():
         if mcp_enabled and mcp_ready:
             yield f"data: {json.dumps({'status': 'mcp_start', 'message': 'Querying data tools...'})}\n\n"
 
-            mcp_results, tool_calls_list, mcp_text = execute_mcp_tool_loop(
-                user_message, history, session_logger=session_logger,
-                effective_config=effective_config
-            )
+            # Run MCP in thread to enable thought streaming
+            mcp_result_holder = {'results': '', 'tool_calls': [], 'text': ''}
+
+            def run_mcp():
+                try:
+                    mcp_result_holder['results'], mcp_result_holder['tool_calls'], mcp_result_holder['text'] = execute_mcp_tool_loop(
+                        user_message, history, session_logger=session_logger,
+                        effective_config=effective_config,
+                        thought_callback=lambda t: thought_callback(t, 'mcp')
+                    )
+                except Exception as e:
+                    logger.error(f"MCP thread error: {e}")
+                    mcp_result_holder['text'] = f"Error: {e}"
+
+            mcp_thread = threading.Thread(target=run_mcp)
+            mcp_thread.start()
+
+            # Stream thoughts while MCP runs
+            while mcp_thread.is_alive() or not thought_queue.empty():
+                try:
+                    thought_data = thought_queue.get(timeout=0.1)
+                    yield f"data: {json.dumps(thought_data)}\n\n"
+                except queue.Empty:
+                    continue
+
+            mcp_thread.join()
+
+            # Signal MCP thinking complete
+            yield f"data: {json.dumps({'thinking_complete': 'mcp'})}\n\n"
+
+            # Get results from thread
+            mcp_results = mcp_result_holder['results']
+            tool_calls_list = mcp_result_holder['tool_calls']
 
             # Send each tool call for left sidebar
             for tc in tool_calls_list:
@@ -1449,9 +1766,41 @@ def chat_stream():
 
         if kb_enabled:
             yield f"data: {json.dumps({'status': 'kb_start', 'message': 'Searching knowledge base...'})}\n\n"
-            kb_result = execute_kb_query(user_message, session_logger=session_logger)
-            kb_response = kb_result.get("response", "")
-            kb_sources = kb_result.get("sources", [])
+
+            # Run KB in thread to enable thought streaming
+            kb_result_holder = {'response': '', 'sources': []}
+
+            def run_kb():
+                try:
+                    kb_result = execute_kb_query(
+                        user_message, session_logger=session_logger,
+                        thought_callback=lambda t: thought_callback(t, 'kb')
+                    )
+                    kb_result_holder['response'] = kb_result.get("response", "")
+                    kb_result_holder['sources'] = kb_result.get("sources", [])
+                except Exception as e:
+                    logger.error(f"KB thread error: {e}")
+
+            kb_thread = threading.Thread(target=run_kb)
+            kb_thread.start()
+
+            # Stream thoughts while KB runs
+            while kb_thread.is_alive() or not thought_queue.empty():
+                try:
+                    thought_data = thought_queue.get(timeout=0.1)
+                    yield f"data: {json.dumps(thought_data)}\n\n"
+                except queue.Empty:
+                    continue
+
+            kb_thread.join()
+
+            # Signal KB thinking complete
+            yield f"data: {json.dumps({'thinking_complete': 'kb'})}\n\n"
+
+            # Get results from thread
+            kb_response = kb_result_holder['response']
+            kb_sources = kb_result_holder['sources']
+
             # Send KB sources to frontend for inline citations
             if kb_sources:
                 yield f"data: {json.dumps({'kb_sources': kb_sources})}\n\n"
@@ -1482,7 +1831,7 @@ def chat_stream():
 
 Please provide a comprehensive response combining all available information."""
 
-        # Stream the synthesis response
+        # Stream the synthesis response with thought streaming
         try:
             stream_gen = gemini_request(
                 messages=[{"role": "user", "parts": [{"text": synthesis_message}]}],
@@ -1491,7 +1840,8 @@ Please provide a comprehensive response combining all available information."""
                 temperature=0.3,
                 thinking_level=thinking_level,
                 stream=True,
-                session_logger=session_logger
+                session_logger=session_logger,
+                include_thoughts=True  # Enable thought streaming
             )
 
             if isinstance(stream_gen, dict) and "error" in stream_gen:
@@ -1499,9 +1849,21 @@ Please provide a comprehensive response combining all available information."""
                 yield f"data: {json.dumps({'error': stream_gen['error']})}\n\n"
                 return
 
-            for text_chunk in stream_gen:
-                full_text += text_chunk
-                yield f"data: {json.dumps({'text': text_chunk})}\n\n"
+            for chunk in stream_gen:
+                # Handle dict format with 'type' and 'content' keys
+                if isinstance(chunk, dict):
+                    if chunk.get('type') == 'thought':
+                        yield f"data: {json.dumps({'thought': chunk['content'], 'phase': 'synthesis'})}\n\n"
+                    elif chunk.get('type') == 'text':
+                        full_text += chunk['content']
+                        yield f"data: {json.dumps({'text': chunk['content']})}\n\n"
+                else:
+                    # Backward compatibility: plain text string
+                    full_text += chunk
+                    yield f"data: {json.dumps({'text': chunk})}\n\n"
+
+            # Signal synthesis thinking complete
+            yield f"data: {json.dumps({'thinking_complete': 'synthesis'})}\n\n"
 
         except Exception as e:
             logger.error(f"Synthesis streaming error: {e}")

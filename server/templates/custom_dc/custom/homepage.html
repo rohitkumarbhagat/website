@@ -1353,6 +1353,83 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       50% { opacity: 0.7; }
     }
 
+    /* Thinking/Reasoning Section - Inline in Chat */
+    .thinking-section {
+      margin-bottom: 12px;
+      border: 1px solid #e0e7ff;
+      border-radius: 8px;
+      background: #f8faff;
+      overflow: hidden;
+    }
+
+    .thinking-section.collapsed .thinking-content {
+      display: none;
+    }
+
+    .thinking-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      user-select: none;
+      background: linear-gradient(to right, #f0f4ff, #f8faff);
+      transition: background 0.2s;
+    }
+
+    .thinking-header:hover {
+      background: linear-gradient(to right, #e8eeff, #f0f4ff);
+    }
+
+    .thinking-arrow {
+      font-size: 0.7rem;
+      color: var(--gov-blue);
+      transition: transform 0.2s;
+    }
+
+    .thinking-section:not(.collapsed) .thinking-arrow {
+      transform: rotate(90deg);
+    }
+
+    .thinking-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gov-blue);
+    }
+
+    .thinking-badge {
+      margin-left: auto;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: #e0e7ff;
+      color: var(--gov-blue);
+    }
+
+    .thinking-badge.active {
+      background: var(--gov-blue);
+      color: white;
+      animation: pulse-thinking 1.5s infinite;
+    }
+
+    @keyframes pulse-thinking {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .thinking-content {
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      max-height: 300px;
+      overflow-y: auto;
+      border-top: 1px solid #e0e7ff;
+      background: white;
+    }
+
     /* Static Branding Header - Compact Horizontal */
     .branding-header {
       display: flex;
@@ -3598,6 +3675,19 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
                   updateToolCallResult(toolEl, data.result, data.status === 'error', data.name);
                 }
 
+                // Handle thought streaming (model reasoning)
+                if (data.thought) {
+                  const phase = data.phase || 'unknown';
+                  streamingMessage.addThought(data.thought, phase);
+                  console.log(`Thought (${phase}):`, data.thought.substring(0, 50) + '...');
+                }
+
+                // Handle thinking complete signal
+                if (data.thinking_complete) {
+                  streamingMessage.finalizeThoughts();
+                  console.log(`Thinking complete: ${data.thinking_complete}`);
+                }
+
                 // Handle data availability status (no data found)
                 // NOTE: In backend mode, we just log this - let synthesis handle the response
                 // The backend will programmatically append the data request link after synthesis
@@ -4507,27 +4597,88 @@ ${rawResultsJson}
         messageEl.className = 'message assistant';
         messageEl.innerHTML = `
           <div class="message-avatar">DA</div>
-          <div class="message-content"><span class="streaming-cursor">▊</span></div>
+          <div class="message-content">
+            <div class="thinking-section" style="display: none;">
+              <div class="thinking-header">
+                <span class="thinking-arrow">&#9658;</span>
+                <span class="thinking-label">Reasoning</span>
+                <span class="thinking-badge active">Thinking...</span>
+              </div>
+              <div class="thinking-content"></div>
+            </div>
+            <div class="response-content"><span class="streaming-cursor">▊</span></div>
+          </div>
         `;
         chatMessages.appendChild(messageEl);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         const contentEl = messageEl.querySelector('.message-content');
+        const thinkingSection = messageEl.querySelector('.thinking-section');
+        const thinkingContent = messageEl.querySelector('.thinking-content');
+        const thinkingBadge = messageEl.querySelector('.thinking-badge');
+        const thinkingHeader = messageEl.querySelector('.thinking-header');
+        const responseContent = messageEl.querySelector('.response-content');
         let currentText = '';
+        let currentThoughts = '';
+        let thoughtPhases = new Set();
+
+        // Add click handler to toggle thinking section
+        thinkingHeader.addEventListener('click', () => {
+          thinkingSection.classList.toggle('collapsed');
+        });
 
         return {
           element: messageEl,
           // Get the element (for chart injection)
           getElement: () => messageEl,
+
+          // Add thought chunk (from any phase)
+          addThought: (thought, phase) => {
+            // Show thinking section if hidden
+            thinkingSection.style.display = 'block';
+            thoughtPhases.add(phase);
+
+            // Update badge to show current phase
+            const phaseLabels = {
+              'mcp': 'Analyzing data...',
+              'kb': 'Searching knowledge base...',
+              'synthesis': 'Generating response...'
+            };
+            thinkingBadge.textContent = phaseLabels[phase] || 'Thinking...';
+            thinkingBadge.className = 'thinking-badge active';
+
+            currentThoughts += thought;
+            thinkingContent.textContent = currentThoughts;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          },
+
+          // Finalize thinking (collapse and update badge)
+          finalizeThoughts: () => {
+            if (currentThoughts) {
+              thinkingBadge.textContent = 'View reasoning';
+              thinkingBadge.className = 'thinking-badge';
+              thinkingSection.classList.add('collapsed');
+            }
+          },
+
+          // Get thoughts
+          getThoughts: () => currentThoughts,
+
           // Update with new text chunk
           appendText: (text) => {
             currentText += text;
-            contentEl.innerHTML = formatMessage(currentText) + '<span class="streaming-cursor">▊</span>';
+            responseContent.innerHTML = formatMessage(currentText) + '<span class="streaming-cursor">▊</span>';
             chatMessages.scrollTop = chatMessages.scrollHeight;
           },
           // Finalize the message (remove cursor)
           finalize: () => {
-            contentEl.innerHTML = formatMessage(currentText);
+            responseContent.innerHTML = formatMessage(currentText);
+            // Also finalize thoughts if we have any
+            if (currentThoughts && !thinkingSection.classList.contains('collapsed')) {
+              thinkingBadge.textContent = 'View reasoning';
+              thinkingBadge.className = 'thinking-badge';
+              thinkingSection.classList.add('collapsed');
+            }
             chatMessages.scrollTop = chatMessages.scrollHeight;
           },
           // Get current text
@@ -4535,7 +4686,7 @@ ${rawResultsJson}
           // Set full text
           setText: (text) => {
             currentText = text;
-            contentEl.innerHTML = formatMessage(currentText) + '<span class="streaming-cursor">▊</span>';
+            responseContent.innerHTML = formatMessage(currentText) + '<span class="streaming-cursor">▊</span>';
             chatMessages.scrollTop = chatMessages.scrollHeight;
           }
         };
