@@ -1523,45 +1523,70 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
 
 
 # Chart config schema for Gemini structured output (hardcoded - not user configurable)
+# Supports multiple charts for variables with different units/scales
 CHART_CONFIG_SCHEMA = {
     "type": "object",
     "properties": {
         "should_render": {
             "type": "boolean",
-            "description": "True if chart should be rendered (data exists)"
+            "description": "True if at least one chart should be rendered"
         },
-        "viz_type": {
-            "type": "string",
-            "enum": ["line", "bar", "ranking", "pie", "highlight", "gauge", "scatter", "slider"]
-        },
-        "title": {"type": "string"},
-        "variable_dcids": {"type": "array", "items": {"type": "string"}},
-        "place_dcids": {"type": "array", "items": {"type": "string"}},
-        "parent_place": {"type": "string"},
-        "child_place_type": {"type": "string"}
+        "charts": {
+            "type": "array",
+            "description": "Array of chart configurations (max 3). Group compatible variables together.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "viz_type": {
+                        "type": "string",
+                        "enum": ["line", "bar", "ranking", "pie", "highlight", "gauge", "scatter", "slider"]
+                    },
+                    "title": {"type": "string", "description": "Descriptive chart title"},
+                    "variable_dcids": {"type": "array", "items": {"type": "string"}},
+                    "place_dcids": {"type": "array", "items": {"type": "string"}},
+                    "parent_place": {"type": "string"},
+                    "child_place_type": {"type": "string"}
+                }
+            }
+        }
     },
     "required": ["should_render"]
 }
 
 
 def get_chart_config(mcp_results: str, user_message: str) -> dict:
-    """Get chart configuration using structured output."""
+    """Get chart configuration using structured output.
+
+    Supports multiple charts for variables with different units/scales.
+    """
     config = load_config()
     mcp_model = config.get("gemini", {}).get("mcp_model", "gemini-3-flash-preview")
 
-    prompt = f"""Based on the data query and results, determine if a chart should be rendered.
+    prompt = f"""Based on the data query and results, determine chart configurations.
 
 User Query: {user_message}
 
 Data Results:
-{mcp_results[:3000] if mcp_results else 'No data results'}
+{mcp_results if mcp_results else 'No data results'}
 
-Extract variable DCIDs and place DCIDs from the results. Choose appropriate viz_type based on data type.
-If no meaningful data for visualization, set should_render to false."""
+Instructions:
+1. Extract variable DCIDs and place DCIDs from the results
+2. Analyze variable units from source_metadata and data scales from the values
+3. Group variables that can be meaningfully compared on the same Y-axis:
+   - Same unit type (e.g., both INR, both counts, both percentages)
+   - Similar magnitude (within ~100x of each other)
+4. Create SEPARATE charts for incompatible variable groups:
+   - Different unit types should be separate (e.g., "Count" vs "INR" vs "Percentage")
+   - Vastly different scales should be separate (e.g., millions vs trillions)
+5. MAXIMUM 3 charts - if more groups exist, prioritize most relevant to the query
+6. Choose appropriate viz_type for each chart (line for time series, bar for comparison)
+7. Give each chart a descriptive title
+
+Set should_render to false if no meaningful data for visualization."""
 
     response = gemini_request(
         messages=[{"role": "user", "parts": [{"text": prompt}]}],
-        system_instruction="You are a data visualization expert. Extract chart configuration from data results.",
+        system_instruction="You are a data visualization expert. Extract chart configurations from data results, grouping compatible variables together and separating incompatible ones into multiple charts.",
         model=mcp_model,
         temperature=0.2,
         thinking_level="minimal",  # Fastest for simple extraction
