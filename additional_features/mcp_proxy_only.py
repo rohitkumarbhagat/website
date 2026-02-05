@@ -1604,6 +1604,57 @@ Set should_render to false if no meaningful data for visualization."""
     return {"should_render": False}
 
 
+# Schema for validating if synthesis response contains actual data
+DATA_VALIDATION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "data_found": {
+            "type": "boolean",
+            "description": "True if the response contains actual data/statistics that answer the query. False if data is unavailable, not found, or the response says data doesn't exist."
+        }
+    },
+    "required": ["data_found"]
+}
+
+
+def validate_data_response(synthesis_text: str, user_message: str) -> bool:
+    """Quick validation: did synthesis actually answer with data?
+
+    Called after synthesis completes to determine if charts should be shown.
+    Uses fast model with no thinking for minimal latency.
+    """
+    config = load_config()
+    model = config.get("gemini", {}).get("mcp_model", "gemini-2.0-flash")
+
+    prompt = f"""User asked: {user_message}
+
+Response given:
+{synthesis_text[:2000]}
+
+Did this response contain actual data/statistics that answer the user's question?
+Return false if the response says data is "not available", "not found", "doesn't exist", or similar."""
+
+    response = gemini_request(
+        messages=[{"role": "user", "parts": [{"text": prompt}]}],
+        system_instruction="You validate if a response contains actual data.",
+        model=model,
+        temperature=0,
+        thinking_level="none",  # Fastest - no thinking needed
+        response_schema=DATA_VALIDATION_SCHEMA,
+        stream=False
+    )
+
+    try:
+        if "candidates" in response:
+            text = response["candidates"][0]["content"]["parts"][0].get("text", "{}")
+            result = json.loads(text)
+            return result.get("data_found", True)
+    except Exception as e:
+        logger.error(f"Data validation parse error: {e}")
+
+    return True  # Default to showing charts on error
+
+
 @app.route("/api/chat/stream", methods=["POST"])
 def chat_stream():
     """Full chat workflow with SSE streaming.
@@ -1895,10 +1946,21 @@ Please provide a comprehensive response combining all available information."""
             session_logger.log_error("SYNTHESIS_STREAM_ERROR", str(e))
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
 
+        # Quick validation: should we show charts based on synthesis response?
+        show_charts = True
+        if full_text and chart_thread[0]:
+            show_charts = validate_data_response(full_text, user_message)
+            if not show_charts:
+                session_logger.log("CHART_VALIDATION", {"data_found": False, "action": "hide_charts"})
+
         # Wait for chart config thread (started after MCP, runs parallel with KB + synthesis)
         if chart_thread[0]:
             chart_thread[0].join(timeout=5)
         chart_config = chart_result_holder['config']
+
+        # Add hide_charts flag if validation determined no data was found
+        if not show_charts:
+            chart_config['hide_charts'] = True
 
         # Log final response
         total_duration_ms = (time.time() - request_start_time) * 1000

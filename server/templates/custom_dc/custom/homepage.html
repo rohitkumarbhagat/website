@@ -3073,6 +3073,13 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           return;
         }
 
+        // Check hide_charts flag from post-synthesis validation
+        if (chartConfig.hide_charts) {
+          console.log('❌ SKIP: hide_charts is true (data validation determined no data found)');
+          console.groupEnd();
+          return;
+        }
+
         // Support both old format (single chart) and new format (multiple charts)
         // Old format: { should_render, viz_type, variable_dcids, ... }
         // New format: { should_render, charts: [{viz_type, variable_dcids, ...}, ...] }
