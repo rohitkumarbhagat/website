@@ -1544,7 +1544,7 @@ CHART_CONFIG_SCHEMA = {
         },
         "viz_type": {
             "type": "string",
-            "enum": ["line", "bar", "map", "ranking", "pie", "highlight", "gauge", "scatter", "slider"]
+            "enum": ["line", "bar", "ranking", "pie", "highlight", "gauge", "scatter", "slider"]
         },
         "title": {"type": "string"},
         "variable_dcids": {"type": "array", "items": {"type": "string"}},

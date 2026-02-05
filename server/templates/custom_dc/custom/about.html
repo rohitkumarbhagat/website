@@ -745,37 +745,40 @@
      <!-- Map: Food CPI by State -->
      <div class="insight-card">
        <h3>Food & Beverages CPI by State</h3>
-       <datacommons-map
+       <datacommons-ranking
          apiRoot="/"
          header="Consumer Price Index - Food & Beverages (Base: 2012=100)"
          parentPlace="country/IND"
          childPlaceType="AdministrativeArea1"
          variable="ConsumerPriceIndex_EconomicActivity_FoodAndBeverages"
-       ></datacommons-map>
+         showHighestLowest="true"
+       ></datacommons-ranking>
      </div>
  
      <!-- Map: Health CPI by State -->
      <div class="insight-card saffron-border">
        <h3>Health CPI by State</h3>
-       <datacommons-map
+       <datacommons-ranking
          apiRoot="/"
          header="Consumer Price Index - Health (Base: 2012=100)"
          parentPlace="country/IND"
          childPlaceType="AdministrativeArea1"
          variable="ConsumerPriceIndex_EconomicActivity_Health"
-       ></datacommons-map>
+         showHighestLowest="true"
+       ></datacommons-ranking>
      </div>
  
      <!-- Map: General CPI by State - Full Width -->
      <div class="insight-card full-width-card green-border">
        <h3>General CPI by State</h3>
-       <datacommons-map
+       <datacommons-ranking
          apiRoot="/"
          header="Consumer Price Index - General (Base: 2012=100)"
          parentPlace="country/IND"
          childPlaceType="AdministrativeArea1"
          variable="ConsumerPriceIndex_EconomicActivity_MOSPIGeneral"
-       ></datacommons-map>
+         showHighestLowest="true"
+       ></datacommons-ranking>
      </div>
    </div>
    </div>
@@ -862,33 +865,36 @@
      <div class="insights-grid">
        <div class="insight-card">
          <h3>GSDP by State (Current Prices)</h3>
-         <datacommons-map
+         <datacommons-ranking
            apiRoot="/"
            header="Gross State Domestic Product - Current Prices (INR)"
            parentPlace="country/IND"
            childPlaceType="AdministrativeArea1"
            variable="Amount_EconomicActivity_GrossDomesticProduction_Nominal"
-         ></datacommons-map>
+           showHighestLowest="true"
+         ></datacommons-ranking>
        </div>
        <div class="insight-card saffron-border">
          <h3>GSDP by State (Constant Prices)</h3>
-         <datacommons-map
+         <datacommons-ranking
            apiRoot="/"
            header="Gross State Domestic Product - Constant Prices (INR)"
            parentPlace="country/IND"
            childPlaceType="AdministrativeArea1"
            variable="Amount_EconomicActivity_GrossDomesticProduction_RealValue"
-         ></datacommons-map>
+           showHighestLowest="true"
+         ></datacommons-ranking>
        </div>
        <div class="insight-card full-width-card green-border">
          <h3>GSDP Growth Rate by State</h3>
-         <datacommons-map
+         <datacommons-ranking
            apiRoot="/"
            header="GSDP Growth Rate (%)"
            parentPlace="country/IND"
            childPlaceType="AdministrativeArea1"
            variable="NominalValue_GrowthRate_Amount_EconomicActivity_GrossDomesticProduction"
-         ></datacommons-map>
+           showHighestLowest="true"
+         ></datacommons-ranking>
        </div>
      </div>
    </div>
@@ -983,13 +989,13 @@
      <div class="insights-grid">
        <div class="insight-card full-width-card">
          <h3>Export Value by Destination Country</h3>
-         <datacommons-map
+         <datacommons-ranking
            apiRoot="/"
            header="Exports from India by Destination Country (INR)"
            parentPlace="Earth"
            childPlaceType="Country"
            variable="Exports_EconomicActivity_ExportSourceIndia"
-         ></datacommons-map>
+         ></datacommons-ranking>
        </div>
      </div>
  
@@ -1097,13 +1103,14 @@
      <div class="insights-grid">
        <div class="insight-card full-width-card">
          <h3>Factory Count by State</h3>
-         <datacommons-map
+         <datacommons-ranking
            apiRoot="/"
            header="Number of Factories by State"
            parentPlace="country/IND"
            childPlaceType="AdministrativeArea1"
            variable="Count_Establishment_Factory"
-         ></datacommons-map>
+           showHighestLowest="true"
+         ></datacommons-ranking>
        </div>
      </div>
    </div>
@@ -1292,46 +1299,50 @@
     <div class="insights-grid">
       <div class="insight-card">
         <h3>Calorie Intake by State (Rural)</h3>
-        <datacommons-map
+        <datacommons-ranking
           apiRoot="/"
           header="Average Daily Calorie Intake - Rural (kcal per person)"
           parentPlace="country/IND"
           childPlaceType="AdministrativeArea1"
           variable="Daily_Mean_DietaryIntake_Energy_Rural_AsAFractionOf_Count_Person"
-        ></datacommons-map>
+          showHighestLowest="true"
+        ></datacommons-ranking>
       </div>
 
       <div class="insight-card saffron-border">
         <h3>Calorie Intake by State (Urban)</h3>
-        <datacommons-map
+        <datacommons-ranking
           apiRoot="/"
           header="Average Daily Calorie Intake - Urban (kcal per person)"
           parentPlace="country/IND"
           childPlaceType="AdministrativeArea1"
           variable="Daily_Mean_DietaryIntake_Energy_Urban_AsAFractionOf_Count_Person"
-        ></datacommons-map>
+          showHighestLowest="true"
+        ></datacommons-ranking>
       </div>
 
       <div class="insight-card">
         <h3>Protein Intake by State (Rural)</h3>
-        <datacommons-map
+        <datacommons-ranking
           apiRoot="/"
           header="Average Daily Protein Intake - Rural (g per person)"
           parentPlace="country/IND"
           childPlaceType="AdministrativeArea1"
           variable="Daily_Mean_DietaryIntake_Protein_Rural_AsAFractionOf_Count_Person"
-        ></datacommons-map>
+          showHighestLowest="true"
+        ></datacommons-ranking>
       </div>
 
       <div class="insight-card saffron-border">
         <h3>Protein Intake by State (Urban)</h3>
-        <datacommons-map
+        <datacommons-ranking
           apiRoot="/"
           header="Average Daily Protein Intake - Urban (g per person)"
           parentPlace="country/IND"
           childPlaceType="AdministrativeArea1"
           variable="Daily_Mean_DietaryIntake_Protein_Urban_AsAFractionOf_Count_Person"
-        ></datacommons-map>
+          showHighestLowest="true"
+        ></datacommons-ranking>
       </div>
     </div>
 
