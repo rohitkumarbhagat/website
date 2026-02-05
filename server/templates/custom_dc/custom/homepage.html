@@ -4622,7 +4622,7 @@ ${rawResultsJson}
         let currentThoughts = '';
         let thoughtPhases = new Set();
 
-        // Add click handler to toggle thinking section
+        // Add click handler to toggle thinking section (user controls collapse/expand)
         thinkingHeader.addEventListener('click', () => {
           thinkingSection.classList.toggle('collapsed');
         });
@@ -4652,12 +4652,12 @@ ${rawResultsJson}
             chatMessages.scrollTop = chatMessages.scrollHeight;
           },
 
-          // Finalize thinking (collapse and update badge)
+          // Finalize thinking (update badge only, no auto-collapse)
           finalizeThoughts: () => {
             if (currentThoughts) {
               thinkingBadge.textContent = 'View reasoning';
               thinkingBadge.className = 'thinking-badge';
-              thinkingSection.classList.add('collapsed');
+              // No auto-collapse - user controls when to collapse
             }
           },
 
@@ -4673,11 +4673,10 @@ ${rawResultsJson}
           // Finalize the message (remove cursor)
           finalize: () => {
             responseContent.innerHTML = formatMessage(currentText);
-            // Also finalize thoughts if we have any
+            // Update thinking badge if we have thoughts (no auto-collapse)
             if (currentThoughts && !thinkingSection.classList.contains('collapsed')) {
               thinkingBadge.textContent = 'View reasoning';
               thinkingBadge.className = 'thinking-badge';
-              thinkingSection.classList.add('collapsed');
             }
             chatMessages.scrollTop = chatMessages.scrollHeight;
           },
