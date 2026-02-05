@@ -1418,16 +1418,20 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
     }
 
     .thinking-content {
-      padding: 12px 14px;
+      padding: 12px 16px;
       font-size: 0.85rem;
-      color: #555;
-      line-height: 1.5;
+      color: #5a6a8a;
+      line-height: 1.6;
       white-space: pre-wrap;
-      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-style: italic;
       max-height: 300px;
       overflow-y: auto;
+      scroll-behavior: smooth;
       border-top: 1px solid #e0e7ff;
-      background: white;
+      border-left: 3px solid var(--gov-blue);
+      background: linear-gradient(to right, #f0f5ff, #f8faff);
+      margin: 0 8px 8px 8px;
+      border-radius: 0 6px 6px 0;
     }
 
     /* Static Branding Header - Compact Horizontal */
@@ -3048,15 +3052,8 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
               ></datacommons-line>`;
         }
 
-        // Wrap in container with source attribution
-        return `
-          <div class="dc-chart-container" id="${containerId}">
-            ${componentHtml}
-            <div class="dc-chart-footer">
-              ${unit ? `<span class="dc-chart-unit">Unit: ${escapeHtml(unit)}</span>` : ''}
-              <span class="dc-chart-source">Source: <a href="https://datacommons.org" target="_blank" rel="noopener">Data Commons</a></span>
-            </div>
-          </div>`;
+        // Return just the component without wrapper
+        return componentHtml;
       }
 
       // Note: Chart analysis, validation, and Chart.js rendering have been removed.
@@ -4648,7 +4645,10 @@ ${rawResultsJson}
             thinkingBadge.className = 'thinking-badge active';
 
             currentThoughts += thought;
-            thinkingContent.textContent = currentThoughts;
+            // Use formatMessage to render markdown (bold, italic, etc.)
+            thinkingContent.innerHTML = formatMessage(currentThoughts);
+            // Auto-scroll within the thinking content div
+            thinkingContent.scrollTop = thinkingContent.scrollHeight;
             chatMessages.scrollTop = chatMessages.scrollHeight;
           },
 
