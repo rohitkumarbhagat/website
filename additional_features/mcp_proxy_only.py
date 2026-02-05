@@ -706,31 +706,19 @@ def build_thinking_config(thinking_value: str, include_thoughts: bool = False) -
     """Build thinking configuration for Gemini 3 models.
 
     Args:
-        thinking_value: Thinking level ('minimal', 'low', 'medium', 'high') or budget number
+        thinking_value: Thinking level ('minimal', 'low', 'medium', 'high')
         include_thoughts: If True, includes thought summaries in the response
 
     Returns:
         dict: thinkingConfig for Gemini generationConfig
     """
-    level_map = {
-        "minimal": 128,
-        "low": 1024,
-        "medium": 8192,
-        "high": 24576
-    }
-
-    if thinking_value in level_map:
-        budget = level_map[thinking_value]
-    else:
-        try:
-            budget = int(thinking_value)
-            budget = max(0, min(24576, budget))
-        except ValueError:
-            budget = 1024  # default to low
+    # Gemini 3 Flash valid levels
+    valid_levels = ["minimal", "low", "medium", "high"]
+    level = thinking_value.lower() if thinking_value.lower() in valid_levels else "low"
 
     config = {
         "thinkingConfig": {
-            "thinkingBudget": budget
+            "thinkingLevel": level  # Gemini 3 format (string)
         }
     }
 
@@ -1576,6 +1564,7 @@ If no meaningful data for visualization, set should_render to false."""
         system_instruction="You are a data visualization expert. Extract chart configuration from data results.",
         model=mcp_model,
         temperature=0.2,
+        thinking_level="minimal",  # Fastest for simple extraction
         response_schema=CHART_CONFIG_SCHEMA,
         stream=False
     )
@@ -1653,6 +1642,10 @@ def chat_stream():
         nonlocal session_logger
         request_start_time = time.time()
         full_text = ""
+
+        # Chart config runs in parallel with KB + synthesis
+        chart_result_holder = {'config': {"should_render": False}}
+        chart_thread = [None]  # Use list to avoid nonlocal issues
 
         # Send session ID first so frontend can display it
         yield f"data: {json.dumps({'session_id': session_logger.session_id})}\n\n"
@@ -1754,6 +1747,13 @@ def chat_stream():
             # Check data availability and send status to frontend
             data_status = check_data_availability(tool_calls_list)
             yield f"data: {json.dumps({'data_status': data_status})}\n\n"
+
+            # Start chart config in background (runs parallel with KB + synthesis)
+            if mcp_results:
+                def run_chart_config():
+                    chart_result_holder['config'] = get_chart_config(mcp_results, user_message)
+                chart_thread[0] = threading.Thread(target=run_chart_config)
+                chart_thread[0].start()
 
         elif mcp_enabled and not mcp_ready:
             session_logger.log("MCP_SKIPPED", {"reason": "MCP not connected or no tools available"})
@@ -1870,8 +1870,10 @@ Please provide a comprehensive response combining all available information."""
             session_logger.log_error("SYNTHESIS_STREAM_ERROR", str(e))
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
 
-        # Get chart config (non-blocking)
-        chart_config = get_chart_config(mcp_results, user_message)
+        # Wait for chart config thread (started after MCP, runs parallel with KB + synthesis)
+        if chart_thread[0]:
+            chart_thread[0].join(timeout=5)
+        chart_config = chart_result_holder['config']
 
         # Log final response
         total_duration_ms = (time.time() - request_start_time) * 1000
