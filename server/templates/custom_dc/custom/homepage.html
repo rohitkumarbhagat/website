@@ -2289,6 +2289,16 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       margin: 16px 0;
     }
 
+    /* Edge toggle tabs - hidden by default when Dev mode is OFF */
+    .edge-toggle-tab {
+      display: none;  /* Hidden by default */
+    }
+
+    /* Show edge toggle tabs when Dev mode is ON (controlled via JS) */
+    body.dev-mode-on .edge-toggle-tab {
+      display: flex;
+    }
+
     /* Config Source Toggle Styles */
     .config-source-section .radio-option {
       transition: border-color 0.2s, background 0.2s;
@@ -2312,8 +2322,8 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
 {% block content %}
   <!-- App Container with 3-column layout -->
   <div class="app-container">
-    <!-- Left Sidebar - Tool Calls -->
-    <aside class="left-sidebar" id="left-sidebar">
+    <!-- Left Sidebar - Tool Calls (hidden by default, toggle with Dev switch) -->
+    <aside class="left-sidebar hidden" id="left-sidebar">
       <div class="sidebar-header">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -2415,8 +2425,8 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       </footer>
     </main>
 
-    <!-- Right Sidebar - Settings -->
-    <aside class="right-sidebar" id="right-sidebar">
+    <!-- Right Sidebar - Settings (hidden by default, toggle with Dev switch) -->
+    <aside class="right-sidebar hidden" id="right-sidebar">
       <div class="sidebar-header">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="3"></circle>
@@ -2561,7 +2571,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
   </div>
 
   <!-- Left Edge Toggle Tab (Tools) -->
-  <button class="edge-toggle-tab left-toggle-tab open" id="tools-toggle" title="Toggle Tool Activity">
+  <button class="edge-toggle-tab left-toggle-tab" id="tools-toggle" title="Toggle Tool Activity">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
@@ -2569,7 +2579,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
   </button>
 
   <!-- Right Edge Toggle Tab (Settings) -->
-  <button class="edge-toggle-tab right-toggle-tab open" id="settings-toggle" title="Toggle Settings">
+  <button class="edge-toggle-tab right-toggle-tab" id="settings-toggle" title="Toggle Settings">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <polyline points="15 18 9 12 15 6"></polyline>
     </svg>
@@ -2723,7 +2733,8 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       let synthesisThinkingLevel = localStorage.getItem('synthesis_thinking_level') || 'low';
 
       // Configuration source: 'frontend' or 'backend'
-      let configSource = localStorage.getItem('config_source') || 'frontend';
+      // Default to 'backend' mode - no API key needed in browser
+      let configSource = localStorage.getItem('config_source') || 'backend';
       let backendConnected = false;
 
       // Session ID for backend mode logging (persists across follow-up messages)
@@ -3367,6 +3378,14 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           });
         }
 
+        // Dev Mode toggle in navbar (under Tools dropdown)
+        const navbarDevToggle = document.getElementById('navbar-dev-toggle');
+        if (navbarDevToggle) {
+          navbarDevToggle.addEventListener('change', (e) => {
+            toggleSidebars(e.target.checked);
+          });
+        }
+
         // Update status badges
         updateStatusBadges();
 
@@ -3430,8 +3449,19 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         // Initialize voice input
         initVoiceInput();
 
-        // Auto-connect if config exists
-        if (geminiApiKey) {
+        // Initialize Dev Mode state (hidden by default, toggle is OFF)
+        const sidebarsVisible = localStorage.getItem('sidebars_visible') === 'true';
+        const navbarDevToggleEl = document.getElementById('navbar-dev-toggle');
+        if (navbarDevToggleEl) {
+          navbarDevToggleEl.checked = sidebarsVisible;
+        }
+        toggleSidebars(sidebarsVisible);
+
+        // Auto-connect based on config source
+        // Backend mode auto-connects without requiring API key
+        if (configSource === 'backend') {
+          saveConfig();  // This will call checkBackendConnection() and enable chat
+        } else if (geminiApiKey) {
           saveConfig();
         }
       }
@@ -3914,6 +3944,33 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           kbStatus.textContent = kbEnabled ? 'Active' : 'Inactive';
           kbStatus.className = kbEnabled ? 'status-badge active' : 'status-badge';
         }
+      }
+
+      // Toggle Dev Mode - controls sidebars and edge toggle tabs visibility
+      function toggleSidebars(show) {
+        const leftSidebar = document.getElementById('left-sidebar');
+        const rightSidebar = document.getElementById('right-sidebar');
+        const toolsToggle = document.getElementById('tools-toggle');
+        const settingsToggle = document.getElementById('settings-toggle');
+
+        if (show) {
+          // Dev mode ON: show sidebars and edge toggle tabs
+          leftSidebar.classList.remove('hidden');
+          rightSidebar.classList.remove('hidden');
+          if (toolsToggle) toolsToggle.classList.add('open');
+          if (settingsToggle) settingsToggle.classList.add('open');
+          document.body.classList.add('dev-mode-on');
+        } else {
+          // Dev mode OFF: hide sidebars and edge toggle tabs
+          leftSidebar.classList.add('hidden');
+          rightSidebar.classList.add('hidden');
+          if (toolsToggle) toolsToggle.classList.remove('open');
+          if (settingsToggle) settingsToggle.classList.remove('open');
+          document.body.classList.remove('dev-mode-on');
+        }
+
+        // Persist preference
+        localStorage.setItem('sidebars_visible', show.toString());
       }
 
       // Clear tool calls from left sidebar

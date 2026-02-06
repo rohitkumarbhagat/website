@@ -201,6 +201,56 @@
       background: rgba(255,255,255,0.15) !important;
       color: #fff !important;
     }
+
+    /* Dev Mode Toggle Switch in Navbar */
+    .dev-toggle-item:hover {
+      background: rgba(255,255,255,0.15) !important;
+    }
+
+    .dev-mode-switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+    }
+
+    .dev-mode-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .dev-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255,0.3);
+      transition: 0.3s;
+      border-radius: 20px;
+    }
+
+    .dev-slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    .dev-mode-switch input:checked + .dev-slider {
+      background-color: #34A853;
+    }
+
+    .dev-mode-switch input:checked + .dev-slider:before {
+      transform: translateX(16px);
+    }
   </style>
 
   <!-- Tricolor Strip -->
@@ -242,6 +292,14 @@
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="{{ url_for('tools.download') }}">Download</a>
                     <a class="dropdown-item" href="{{ url_for('tools.stat_var') }}">Variables</a>
+                    <div class="dropdown-divider" style="border-color: rgba(255,255,255,0.2);"></div>
+                    <div class="dropdown-item dev-toggle-item" style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="event.stopPropagation();">
+                      <span>Dev Mode</span>
+                      <label class="dev-mode-switch" style="margin: 0;">
+                        <input type="checkbox" id="navbar-dev-toggle">
+                        <span class="dev-slider"></span>
+                      </label>
+                    </div>
                   </div>
                 </li>
                 <li class="nav-item">
