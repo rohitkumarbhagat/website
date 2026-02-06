@@ -1634,7 +1634,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
     .chat-input-row {
       display: flex;
       gap: 12px;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .chat-input-wrapper {
@@ -1644,16 +1644,21 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
     #chat-input {
       width: 100%;
       border: 2px solid var(--border-color);
-      border-radius: 24px;
-      padding: 14px 22px;
+      border-radius: 26px;
+      padding: 0 20px;
       font-size: 1rem;
       resize: none;
-      min-height: 52px;
-      max-height: 150px;
-      line-height: 1.5;
+      height: 52px;
+      line-height: 52px;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
       font-family: inherit;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    #chat-input::placeholder {
+      line-height: 52px;
     }
 
     #chat-input:focus {
@@ -2046,14 +2051,27 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       }
 
       #chat-input {
-        padding: 12px 18px;
-        font-size: 0.95rem;
-        min-height: 46px;
+        padding: 0 16px;
+        font-size: 0.9rem;
+        height: 44px;
+        line-height: 44px;
       }
 
-      #send-btn {
-        width: 46px;
-        height: 46px;
+      #chat-input::placeholder {
+        line-height: 44px;
+      }
+
+      #send-btn,
+      #mic-btn {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+      }
+
+      #mic-btn svg,
+      #send-btn svg {
+        width: 18px;
+        height: 18px;
       }
 
       .google-footer {
@@ -2076,6 +2094,37 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       .tool-call-args {
         font-size: 0.75rem;
         padding: 6px 10px;
+      }
+
+      .chat-input-area {
+        padding: 10px 12px;
+      }
+
+      .chat-input-row {
+        gap: 8px;
+      }
+
+      #chat-input {
+        padding: 0 14px;
+        font-size: 0.85rem;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      #chat-input::placeholder {
+        line-height: 40px;
+      }
+
+      #send-btn,
+      #mic-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      #mic-btn svg,
+      #send-btn svg {
+        width: 16px;
+        height: 16px;
       }
     }
 
@@ -3570,8 +3619,8 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       function enableChat() {
         chatInput.disabled = false;
         chatInput.placeholder = (mcpConnected || (configSource === 'backend' && backendConnected))
-          ? 'Ask about Indian economic data, policies, or government schemes...'
-          : 'Ask questions about policies or economic data...';
+          ? 'Ask your questions here...'
+          : 'Ask your questions here...';
         sendBtn.disabled = false;
         // Enable mic button and language selector if speech recognition is supported
         if (micBtn && SpeechRecognition) {
