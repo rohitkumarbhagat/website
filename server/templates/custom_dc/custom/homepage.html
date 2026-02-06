@@ -2740,6 +2740,9 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       // Session ID for backend mode logging (persists across follow-up messages)
       let currentConversationSessionId = null;
 
+      // Data status from last query (used for conditional follow-up heading)
+      let currentDataStatus = null;
+
       // Read URL query params for config overrides (for demo/presentation mode)
       const urlParams = new URLSearchParams(window.location.search);
       const urlConfigOverrides = {
@@ -3805,10 +3808,13 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
                 // Handle data availability status (no data found)
                 // NOTE: In backend mode, we just log this - let synthesis handle the response
                 // The backend will programmatically append the data request link after synthesis
-                if (data.data_status && !data.data_status.has_data) {
-                  console.log('Data status: No data found -', data.data_status);
-                  // Don't override fullText here - synthesis will handle the response gracefully
-                  // and backend will append the data request link programmatically
+                if (data.data_status) {
+                  currentDataStatus = data.data_status;  // Store for conditional heading
+                  if (!data.data_status.has_data) {
+                    console.log('Data status: No data found -', data.data_status);
+                    // Don't override fullText here - synthesis will handle the response gracefully
+                    // and backend will append the data request link programmatically
+                  }
                 }
 
                 // Handle streaming text
@@ -4374,6 +4380,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
 
         // Start processing
         isProcessing = true;
+        currentDataStatus = null;  // Reset data status for new message
         sendBtn.disabled = true;
         chatInput.disabled = true;
         // Stop voice input if recording and disable mic controls
@@ -4968,8 +4975,12 @@ ${rawResultsJson}
             `<button class="followup-suggestion" data-query="${escapeHtml(s)}">${escapeHtml(s)}</button>`
           ).join('');
 
+          // Use conditional heading based on data availability
+          const hasData = currentDataStatus ? currentDataStatus.has_data : true;
+          const followupHeading = hasData ? 'Follow up questions:' : 'Would you like to explore these instead?';
+
           // Add container at end
-          formatted += `<div class="followup-container"><div class="followup-heading">Follow up questions:</div>${suggestionsHtml}</div>`;
+          formatted += `<div class="followup-container"><div class="followup-heading">${followupHeading}</div>${suggestionsHtml}</div>`;
         }
 
         // Style inline citations [Source: X] - must be done after markdown parsing
