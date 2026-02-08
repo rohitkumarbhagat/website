@@ -1909,8 +1909,18 @@ Please provide a comprehensive response combining all available information."""
 
         # Stream the synthesis response with thought streaming
         try:
+            # Build messages with conversation history for context
+            synthesis_messages = []
+
+            # Add conversation history first (already in Gemini format from frontend)
+            for msg in history:
+                synthesis_messages.append(msg)
+
+            # Add current query with MCP/KB context as final user message
+            synthesis_messages.append({"role": "user", "parts": [{"text": synthesis_message}]})
+
             stream_gen = gemini_request(
-                messages=[{"role": "user", "parts": [{"text": synthesis_message}]}],
+                messages=synthesis_messages,
                 system_instruction=synthesis_prompt,
                 model=synthesis_model,
                 temperature=0.3,
