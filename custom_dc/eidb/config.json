@@ -84,7 +84,7 @@
         "measurementMethod": "measurementMethod"
       }
     },
-    "mospi_asi_combined - mospi_asi_combined.csv": {
+    "mospi_asi_combined - mospi_asi_combined - mospi_asi_.csv": {
       "provenance": "MOSPI ASI Data",
       "format": "variablePerRow",
       "columnMappings": {

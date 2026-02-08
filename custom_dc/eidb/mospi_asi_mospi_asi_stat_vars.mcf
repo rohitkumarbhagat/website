@@ -1,6 +1,6 @@
 Node: dcid:Count_Establishment_Factory
 typeOf: dcid:StatisticalVariable
-name: "Count Establishment: Establishment Type Factory"
+name: "Number of factories"
 populationType: dcid:Establishment
 measuredProperty: dcid:count
 statType: dcid:measuredValue
@@ -16,7 +16,7 @@ activitySource: dcid:Factory
 
 Node: dcid:Count_Person_Factory_TotalEngaged
 typeOf: dcid:StatisticalVariable
-name: "Population engaged in factories"
+name: "Number of factory workers"
 populationType: dcid:Person
 measuredProperty: dcid:count
 statType: dcid:measuredValue
@@ -25,15 +25,276 @@ employmentCategory: dcid:TotalEngaged
 
 Node: dcid:Count_Worker_Factory
 typeOf: dcid:StatisticalVariable
-name: "Number of factory workers"
+name: "Number of workers in factories"
 populationType: dcid:Worker
 measuredProperty: dcid:count
 statType: dcid:measuredValue
 employedEstablishment: dcid:Factory
 
+Node: dcid:Count_Establishment_Factory_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Number of basic metals factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:BasicMetals
+
+Node: dcid:Count_Establishment_Factory_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Number of beverages factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:Beverages
+
+Node: dcid:Count_Establishment_Factory_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of chemical products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Count_Establishment_Factory_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Number of coke and petroleum factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Count_Establishment_Factory_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Number of cotton ginning and seeds factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Count_Establishment_Factory_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Number of electrical equipment factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Count_Establishment_Factory_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Number of electronics and opticals factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Count_Establishment_Factory_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of fabricated metal products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Count_Establishment_Factory_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of food products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:FoodProducts
+
+Node: dcid:Count_Establishment_Factory_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Number of furniture factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:Furniture
+
+Node: dcid:Count_Establishment_Factory_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of leather products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Count_Establishment_Factory_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Number of other industries factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Count_Establishment_Factory_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Number of other manufacturing factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Count_Establishment_Factory_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Number of other transport equipment factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Count_Establishment_Factory_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Number of machinery NEC factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Count_Establishment_Factory_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Number of machinery repair factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Count_Establishment_Factory_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Number of motor vehicles and trailers factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Count_Establishment_Factory_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Number of non metallic minerals factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Count_Establishment_Factory_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of paper and paper products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Count_Establishment_Factory_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Number of pharmaceuticals factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Count_Establishment_Factory_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Number of printing and media factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Count_Establishment_Factory_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Number of publishing activities factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Count_Establishment_Factory_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Number of rubber and plastics factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Count_Establishment_Factory_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Number of salt production factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:SaltProduction
+
+Node: dcid:Count_Establishment_Factory_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Number of textiles factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:Textiles
+
+Node: dcid:Count_Establishment_Factory_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of tobacco products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Count_Establishment_Factory_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Number of waste and recovery factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Count_Establishment_Factory_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Number of wearing apparel factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:WearingApparel
+
+Node: dcid:Count_Establishment_Factory_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Number of wood and cork products factories"
+populationType: dcid:Establishment
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+establishmentType: dcid:Factory
+factoryType: dcid:WoodAndCorkProducts
+
 Node: dcid:Amount_EconomicActivity_Factory_Emolument
 typeOf: dcid:StatisticalVariable
-name: "Total emoluments paid by factories"
+name: "Total compensation for factory workers"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -42,7 +303,7 @@ activityType: dcid:Emolument
 
 Node: dcid:Amount_EconomicActivity_Factory_FixedCapital
 typeOf: dcid:StatisticalVariable
-name: "Fixed capital of factories"
+name: "Total fixed capital investment of factory"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -51,7 +312,7 @@ activityType: dcid:FixedCapital
 
 Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded
 typeOf: dcid:StatisticalVariable
-name: "Gross value added by factories"
+name: "Total gross value added by factory"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -60,7 +321,7 @@ activityType: dcid:GrossValueAdded
 
 Node: dcid:Amount_EconomicActivity_Factory_Input
 typeOf: dcid:StatisticalVariable
-name: "Total input value for factories"
+name: "Total input of factory"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -69,16 +330,1466 @@ activityType: dcid:Input
 
 Node: dcid:Amount_EconomicActivity_Factory_Output
 typeOf: dcid:StatisticalVariable
-name: "Total output value for factories"
+name: "Total output of factory"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
 activitySource: dcid:Factory
 activityType: dcid:Output
 
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of basic material factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:BasicMetals
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of beverages factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:Beverages
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of chemical products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of coke and petroleum factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of cotton ginning and seeds factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of electrical equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of electronics and optical factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of fabricated metal products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of food products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:FoodProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of furniture factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:Furniture
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of leather products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of other industries factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of other manufacturing factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of other transport equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of machinery NEC factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of machinery repair factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of motor vehicles and trailers factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of non metallic minerals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of paper and paper products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of pharmaceuticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of printing and media factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of publishing activities factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of rubber and plastics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of salt production factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:SaltProduction
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of textiles factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:Textiles
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of tobacco products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of waste and recovery factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of wearing apparel factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:WearingApparel
+
+Node: dcid:Amount_EconomicActivity_Factory_Emolument_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Total compensation of wood and cork products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Emolument
+factoryType: dcid:WoodAndCorkProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of basic metals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:BasicMetals
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of beverages factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:Beverages
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of chemical products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of coke and petroleum factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of cotton ginning and seeds factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of electrical equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of electronics and opticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of fabricated metal products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of food products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:FoodProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of furniture factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:Furniture
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of leather products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of other industries factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of other manufacturing factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of other transport equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of machinery NEC factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of machinery repair factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of motor vehicles and trailers factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of non metallic minerals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of paper and paper products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of pharmaceuticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of printing and media factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of publishing activities factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of rubber and plastics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of salt production factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:SaltProduction
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of textiles factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:Textiles
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of tobacco products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of waste and recovery factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of wearing apparel factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:WearingApparel
+
+Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Total fixed capital of wood and cork products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:FixedCapital
+factoryType: dcid:WoodAndCorkProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of basic metals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:BasicMetals
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of beverages factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:Beverages
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of chemical products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of coke and petroleum factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of cotton ginning and seeds factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of electrical equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of electronics and opticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of fabricated metal products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of food products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:FoodProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of furniture factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:Furniture
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of leather products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of mospi other industries factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of mospi other manufacturing factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of mospi other transport equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of machinery NEC factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of machinery repair factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of motor vehicles and trailers factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of non metallic minerals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of paper and paper products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of pharmaceuticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of printing and media factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of publishing activities factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of rubber and plastics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of salt production factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:SaltProduction
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of textiles factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:Textiles
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of tobacco products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of waste and recovery factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of wearing apparel factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:WearingApparel
+
+Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Total gross value added of wood and cork products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:GrossValueAdded
+factoryType: dcid:WoodAndCorkProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of basic metals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:BasicMetals
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of beverages factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:Beverages
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of chemical products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of coke and petroleum factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of cotton ginning and seeds factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of electrical equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of electronics and opticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of fabricated metal products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of food products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:FoodProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of furniture factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:Furniture
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of leather products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of mospi_ other industries factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of mospi_ other manufacturing factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of mospi_ other transport equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of machinery NEC factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of machinery repair factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of motor vehicles and trailers factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of non metallic minerals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of paper and paper products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of pharmaceuticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of printing and media factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of publishing activities factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of rubber and plastics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of salt production factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:SaltProduction
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of textiles factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:Textiles
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of tobacco products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of waste and recovery factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of wearing apparel factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:WearingApparel
+
+Node: dcid:Amount_EconomicActivity_Factory_Input_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Total input amount of wood and cork products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Input
+factoryType: dcid:WoodAndCorkProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_BasicMetals
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of basic metals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:BasicMetals
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_Beverages
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of beverages factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:Beverages
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_ChemicalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of chemical products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:ChemicalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_CokeAndPetroleum
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of coke and petroleum factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:CokeAndPetroleum
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_CottonGinningAndSeeds
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of cotton ginning and seeds factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:CottonGinningAndSeeds
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_ElectricalEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of electrical equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:ElectricalEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_ElectronicsAndOpticals
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of electronics and optics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:ElectronicsAndOpticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_FabricatedMetalProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of fabricated metal products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:FabricatedMetalProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_FoodProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of food products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:FoodProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_Furniture
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of furniture factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:Furniture
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_LeatherProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of leather products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:LeatherProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MOSPIOtherIndustries
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of mospi_ other industries factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MOSPI_OtherIndustries
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MOSPIOtherManufacturing
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of mospi_ other manufacturing factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MOSPI_OtherManufacturing
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MOSPIOtherTransportEquipment
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of mospi_ other transport equipment factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MOSPI_OtherTransportEquipment
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MachineryNEC
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of machinery NEC factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MachineryNEC
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MachineryRepair
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of machinery repair factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MachineryRepair
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_MotorVehiclesAndTrailers
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of motor vehicles and trailers factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:MotorVehiclesAndTrailers
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_NonMetallicMinerals
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of non metallic minerals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:NonMetallicMinerals
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_PaperAndPaperProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of paper and paper products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:PaperAndPaperProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_Pharmaceuticals
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of pharmaceuticals factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:Pharmaceuticals
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_PrintingAndMedia
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of printing and media factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:PrintingAndMedia
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_PublishingActivities
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of publishing activities factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:PublishingActivities
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_RubberAndPlastics
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of rubber and plastics factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:RubberAndPlastics
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_SaltProduction
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of salt production factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:SaltProduction
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_Textiles
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of textiles factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:Textiles
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_TobaccoProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of tobacco products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:TobaccoProducts
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_WasteAndRecovery
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of waste and recovery factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:WasteAndRecovery
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_WearingApparel
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of wearing apparel factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:WearingApparel
+
+Node: dcid:Amount_EconomicActivity_Factory_Output_WoodAndCorkProducts
+typeOf: dcid:StatisticalVariable
+name: "Total output amount of wood and cork products factory"
+populationType: dcid:EconomicActivity
+measuredProperty: dcid:amount
+statType: dcid:measuredValue
+activitySource: dcid:Factory
+activityType: dcid:Output
+factoryType: dcid:WoodAndCorkProducts
+
 Node: dcid:Amount_EconomicActivity_Factory_Emolument_Rural
 typeOf: dcid:StatisticalVariable
-name: "Total emoluments paid by factories in rural area"
+name: "Total compensation for rural factory workers"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -88,7 +1799,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_Rural
 typeOf: dcid:StatisticalVariable
-name: "Fixed capital of factories in rural area"
+name: "Total fixed capital for rural factory workers"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -98,7 +1809,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Amount_EconomicActivity_Factory_Input_Rural
 typeOf: dcid:StatisticalVariable
-name: "Total input value of factories in rural area"
+name: "Total input for rural factory workers"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -108,7 +1819,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Amount_EconomicActivity_Factory_Output_Rural
 typeOf: dcid:StatisticalVariable
-name: "Total output value of factories in rural area"
+name: "Total output for rural factory workers"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -118,7 +1829,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Count_Establishment_Factory_Rural
 typeOf: dcid:StatisticalVariable
-name: "Number of factories in rural area"
+name: "Number of rural factories"
 populationType: dcid:Establishment
 measuredProperty: dcid:count
 statType: dcid:measuredValue
@@ -127,7 +1838,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Count_Person_Factory_TotalEngaged_Rural
 typeOf: dcid:StatisticalVariable
-name: "Total persons engaged in factories in rural area"
+name: "Number of rural factory workers"
 populationType: dcid:Person
 measuredProperty: dcid:count
 statType: dcid:measuredValue
@@ -137,7 +1848,7 @@ placeOfResidenceClassification: dcid:Rural
 
 Node: dcid:Amount_EconomicActivity_Factory_FixedCapital_AsAFractionOf_Count_Establishment_Factory
 typeOf: dcid:StatisticalVariable
-name: "Average fixed capital per factory"
+name: "Mean fixed capital per factory"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -147,7 +1858,7 @@ activityType: dcid:FixedCapital
 
 Node: dcid:Amount_EconomicActivity_Factory_GrossValueAdded_AsAFractionOf_Count_Person_Factory_TotalEngaged
 typeOf: dcid:StatisticalVariable
-name: "Gross value added per person engaged in factories"
+name: "Mean gross value added per factory employee"
 populationType: dcid:EconomicActivity
 measuredProperty: dcid:amount
 statType: dcid:measuredValue
@@ -157,7 +1868,7 @@ activityType: dcid:GrossValueAdded
 
 Node: dcid:Count_Person_Factory_TotalEngaged_AsAFractionOf_Count_Establishment_Factory
 typeOf: dcid:StatisticalVariable
-name: "Average number of persons engaged per factory"
+name: "Mean number of factory employees per factory"
 populationType: dcid:Person
 measuredProperty: dcid:count
 statType: dcid:measuredValue
@@ -167,7 +1878,7 @@ employmentCategory: dcid:TotalEngaged
 
 Node: dcid:Wages_Worker_AsAFractionOf_Count_Worker
 typeOf: dcid:StatisticalVariable
-name: "Average wages per worker"
+name: "Mean wages per factory employee"
 populationType: dcid:Worker
 measuredProperty: dcid:wages
 statType: dcid:measuredValue
