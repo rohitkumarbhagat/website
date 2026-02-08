@@ -37,7 +37,7 @@
       }
     },
     "mospi_cpi.csv": {
-      "provenance": "MOSPI CPI Data",
+      "provenance": "MOSPI Consumer Price Index Data",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -48,8 +48,20 @@
         "measurementMethod": "measurementMethod"
       }
     },
-    "GDP_Annual - custom_output.csv": {
-      "provenance": "MOSPI GDP Data",
+    "GDP_Annual_INR.csv": {
+      "provenance": "MOSPI Gross Domestic Product Data INR",
+      "format": "variablePerRow",
+      "columnMappings": {
+        "entity": "observationAbout",
+        "date": "observationDate",
+        "value": "value",
+        "variable": "variableMeasured",
+        "unit": "unit",
+        "measurementMethod": "measurementMethod"
+      }
+    },
+    "GDP_Annual_USD.csv": {
+      "provenance": "MOSPI Gross Domestic Product Data USD",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -61,7 +73,7 @@
       }
     },
     "State_wise_SDP-17032025_GSDP_Current - custom_output.csv": {
-      "provenance": "MOSPI GSDP Current Prices",
+      "provenance": "MOSPI Gross State Domestic Product Current Prices",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -73,7 +85,7 @@
       }
     },
     "State_wise_SDP-17032025_GSDP_Constant - custom_output.csv": {
-      "provenance": "MOSPI GSDP Constant Prices",
+      "provenance": "MOSPI Gross State Domestic Product Constant Prices",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -85,7 +97,7 @@
       }
     },
     "mospi_asi_combined - mospi_asi_combined - mospi_asi_.csv": {
-      "provenance": "MOSPI ASI Data",
+      "provenance": "MOSPI Annual Survey of Industries Data",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -97,7 +109,7 @@
       }
     },
     "mospi_nii.csv": {
-      "provenance": "MOSPI NII Data",
+      "provenance": "MOSPI Nutritional Intake in India Data",
       "format": "variablePerRow",
       "columnMappings": {
         "entity": "observationAbout",
@@ -122,12 +134,13 @@
     "Ministry of Statistics and Programme Implementation": {
       "url": "https://esankhyiki.mospi.gov.in/",
       "provenances": {
-        "MOSPI CPI Data": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
-        "MOSPI GDP Data": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=Gross+Domestic+Product+%28GDP%29",
-        "MOSPI GSDP Current Prices": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=GSDP",
-        "MOSPI GSDP Constant Prices": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=GSDP",
-        "MOSPI ASI Data": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&product=ASI",
-        "MOSPI NII Data": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&product=Nutritional+Intake+in+India&search="
+        "MOSPI Consumer Price Index Data": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+        "MOSPI Gross Domestic Product Data INR": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=Gross+Domestic+Product+%28GDP%29",
+        "MOSPI Gross Domestic Product Data USD": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=Gross+Domestic+Product+%28GDP%29",
+        "MOSPI Gross State Domestic Product Current Prices": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=GSDP",
+        "MOSPI Gross State Domestic Product Constant Prices": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&q=GSDP",
+        "MOSPI Annual Survey of Industries Data": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&search=&product=ASI",
+        "MOSPI Nutritional Intake in India Data": "https://esankhyiki.mospi.gov.in/catalogue-main/catalogue?page=0&product=Nutritional+Intake+in+India&search="
       }
     }
   }
