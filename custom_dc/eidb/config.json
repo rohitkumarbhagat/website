@@ -48,30 +48,6 @@
         "measurementMethod": "measurementMethod"
       }
     },
-    "GDP_Annual_INR.csv": {
-      "provenance": "MOSPI Gross Domestic Product Data INR",
-      "format": "variablePerRow",
-      "columnMappings": {
-        "entity": "observationAbout",
-        "date": "observationDate",
-        "value": "value",
-        "variable": "variableMeasured",
-        "unit": "unit",
-        "measurementMethod": "measurementMethod"
-      }
-    },
-    "GDP_Annual_USD.csv": {
-      "provenance": "MOSPI Gross Domestic Product Data USD",
-      "format": "variablePerRow",
-      "columnMappings": {
-        "entity": "observationAbout",
-        "date": "observationDate",
-        "value": "value",
-        "variable": "variableMeasured",
-        "unit": "unit",
-        "measurementMethod": "measurementMethod"
-      }
-    },
     "State_wise_SDP-17032025_GSDP_Current - custom_output.csv": {
       "provenance": "MOSPI Gross State Domestic Product Current Prices",
       "format": "variablePerRow",
