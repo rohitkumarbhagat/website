@@ -1545,7 +1545,11 @@ CHART_CONFIG_SCHEMA = {
                     "variable_dcids": {"type": "array", "items": {"type": "string"}},
                     "place_dcids": {"type": "array", "items": {"type": "string"}},
                     "parent_place": {"type": "string"},
-                    "child_place_type": {"type": "string"}
+                    "child_place_type": {"type": "string"},
+                    "date": {
+                        "type": "string",
+                        "description": "Single comparison date in YYYY, YYYY-MM, or YYYY-MM-DD"
+                    }
                 }
             }
         }
@@ -1580,7 +1584,12 @@ Instructions:
    - Vastly different scales should be separate (e.g., millions vs trillions)
 5. MAXIMUM 3 charts - if more groups exist, prioritize most relevant to the query
 6. Choose appropriate viz_type for each chart (line for time series, bar for comparison)
-7. Give each chart a descriptive title
+7. Give each chart a descriptive title related to data it is showing but do NOT include year/date in the title.
+8. For ALL bar charts, ALWAYS include a date field:
+   - date format must be YYYY (e.g., "2021", "2022")
+   - if user specifies a year, use that year
+   - otherwise, find the LATEST year from the time_series data in tool results
+   - look for the most recent year key in the time_series objects
 
 Set should_render to false if no meaningful data for visualization."""
 
@@ -1597,7 +1606,9 @@ Set should_render to false if no meaningful data for visualization."""
     try:
         if "candidates" in response:
             text = response["candidates"][0]["content"]["parts"][0].get("text", "{}")
-            return json.loads(text)
+            chart_config = json.loads(text)
+            logger.info(f"📊 Chart config result: {json.dumps(chart_config, indent=2)}")
+            return chart_config
     except Exception as e:
         logger.error(f"Chart config parse error: {e}")
 

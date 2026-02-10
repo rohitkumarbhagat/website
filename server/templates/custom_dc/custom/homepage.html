@@ -3981,13 +3981,14 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           return '';
         }
 
-        const { vizType, variableDcid, variableName, placeDcids, unit, parentPlace, childPlaceType, labels, variableDcids } = chartData;
+        const { vizType, variableDcid, variableName, placeDcids, unit, parentPlace, childPlaceType, labels, variableDcids, date } = chartData;
         const containerId = `dc-viz-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         const latestDate = labels && labels.length > 0 ? labels[labels.length - 1] : '';
         const safeHeader = escapeHtml(variableName || 'Data Visualization');
         const safePlaces = (placeDcids || []).filter(Boolean).join(' ');
         const safeParentPlace = parentPlace || 'country/IND';
         const safeChildPlaceType = childPlaceType || 'State';
+        const safeDate = date || '';
 
         // Support multiple variables for comparison charts (space-separated)
         // Use variableDcids array if available, otherwise fall back to single variableDcid
@@ -4037,6 +4038,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
                   header="${safeHeader}"
                   variables="${safeVariables}"
                   places="${safePlaces}"
+                  ${safeDate ? `date="${safeDate}"` : ''}
                   sort="descending"
                 ></datacommons-bar>`;
             } else {
@@ -4047,6 +4049,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
                   variables="${safeVariables}"
                   parentPlace="${safeParentPlace}"
                   childPlaceType="${safeChildPlaceType}"
+                  ${safeDate ? `date="${safeDate}"` : ''}
                   sort="descending"
                 ></datacommons-bar>`;
             }
@@ -4217,13 +4220,15 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
               placeDcids: chart.place_dcids || [],
               parentPlace: chart.parent_place || 'country/IND',
               childPlaceType: chart.child_place_type || 'State',
-              unit: chart.unit || ''
+              unit: chart.unit || '',
+              date: chart.date || ''
             };
 
             console.log(`Chart ${chartsRendered + 1}:`, dcChartData.variableName);
             console.log('  vizType:', dcChartData.vizType);
             console.log('  variableDcids:', dcChartData.variableDcids);
             console.log('  placeDcids:', dcChartData.placeDcids);
+            console.log('  date:', dcChartData.date);
 
             // Render DC Web Component
             const dcHtml = renderDCComponent(dcChartData);
