@@ -785,56 +785,6 @@
  
    <!-- Tab Content: GDP & State GSDP -->
    <div id="tab-gdp-gsdp" class="tab-content active">
-     <!-- Key GDP Indicators -->
-     <div class="section-header">
-       <div class="icon">📊</div>
-       <h2>Key GDP Indicators</h2>
-     </div>
- 
-     <div class="highlight-section">
-       <div class="highlight-card">
-         <datacommons-highlight
-           apiRoot="/"
-           header="GDP (Nominal/Current Prices)"
-           place="country/IND"
-           variable="Amount_EconomicActivity_GrossDomesticProduction_Nominal"
-           unit="INR"
-         ></datacommons-highlight>
-       </div>
-       <div class="highlight-card saffron">
-         <datacommons-highlight
-           apiRoot="/"
-           header="GDP (Real/Constant Prices)"
-           place="country/IND"
-           variable="Amount_EconomicActivity_GrossDomesticProduction_RealValue"
-           unit="INR"
-         ></datacommons-highlight>
-       </div>
-     </div>
-     
-     <p style="color: #666; font-size: 0.9rem; margin: 1rem 0; font-style: italic;">
-       Note: Nominal GDP reflects current market prices, while Real GDP is adjusted for inflation using constant base year prices. Values shown are for the latest available year from each data source. When MOSPI data is updated with newer years, both indicators will automatically display the latest available year.
-     </p>
- 
-     <!-- GDP Trends Over Time -->
-     <div class="section-header">
-       <div class="icon">📈</div>
-       <h2>GDP Trends Over Time</h2>
-     </div>
- 
-     <div class="insights-grid">
-       <div class="insight-card full-width-card">
-         <h3>GDP Trends: Nominal vs Real (2012-2022)</h3>
-         <datacommons-line
-           apiRoot="/"
-           header="Gross Domestic Product Comparison (INR)"
-           places="country/IND"
-           variables="Amount_EconomicActivity_GrossDomesticProduction_Nominal Amount_EconomicActivity_GrossDomesticProduction_RealValue"
-         ></datacommons-line>
-       </div>
-     </div>
- 
-     <!-- State GSDP Section -->
      <!-- Top States by GSDP -->
      <div class="section-header">
        <div class="icon">📈</div>
