@@ -27,6 +27,9 @@
   <meta http-equiv="Expires" content="0">
   <!-- Marked.js for markdown rendering -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- PDF Export Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <!-- Data Commons Web Components - use local custom DC version for proper API routing -->
   <script src="/datacommons.js"></script>
   <script>
@@ -2316,6 +2319,82 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
     .config-source-section input[type="radio"] {
       accent-color: var(--gov-blue);
     }
+
+    /* Export to PDF Buttons */
+    .export-pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      margin-top: 12px;
+      background: #f8f9fa;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-dark);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .export-pdf-btn:hover {
+      background: var(--gov-blue);
+      color: white;
+      border-color: var(--gov-blue);
+    }
+
+    .export-pdf-btn.exporting {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    .export-pdf-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Global Export Chat Button (in header controls) */
+    .export-chat-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: transparent;
+      color: var(--gov-blue);
+      border: 1px solid var(--gov-blue);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .export-chat-btn:hover:not(:disabled) {
+      background: var(--gov-blue);
+      color: white;
+    }
+
+    .export-chat-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .export-chat-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Mobile: hide "Export Chat" text on small screens */
+    @media (max-width: 480px) {
+      .export-chat-btn {
+        padding: 6px;
+        font-size: 0;
+      }
+      .export-chat-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
   </style>
 {% endblock %}
 
@@ -2371,6 +2450,16 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
               <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
             New Chat
+          </button>
+          <button class="export-chat-btn" id="export-chat-btn" title="Export entire conversation to PDF" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <line x1="9" y1="15" x2="12" y2="18"/>
+              <line x1="15" y1="15" x2="12" y2="18"/>
+            </svg>
+            Export Chat
           </button>
         </div>
       </div>
@@ -2951,6 +3040,940 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       // Note: Visualization type detection is now handled by structured output in finalResponseSchema
       // The detectVisualizationType() and detectVisualizationTypeWithGemini() functions have been removed.
 
+      // ============================================================
+      // PDF EXPORT FUNCTIONALITY
+      // ============================================================
+
+      // Wait for DC web component to render (check for SVG in shadow DOM)
+      function waitForComponentRender(component, timeout = 3000) {
+        return new Promise((resolve) => {
+          const start = Date.now();
+          const check = () => {
+            const shadowRoot = component.shadowRoot;
+            if (shadowRoot && shadowRoot.querySelector('svg')) {
+              resolve(true);
+            } else if (Date.now() - start > timeout) {
+              resolve(false); // Timeout - component didn't render
+            } else {
+              requestAnimationFrame(check);
+            }
+          };
+          check();
+        });
+      }
+
+      // Convert SVG element to PNG data URL via canvas
+      async function svgToPngDataUrl(svgElement, width, height) {
+        return new Promise((resolve, reject) => {
+          try {
+            // Clone SVG and inline all styles
+            const svgClone = svgElement.cloneNode(true);
+
+            // Set explicit dimensions
+            svgClone.setAttribute('width', width);
+            svgClone.setAttribute('height', height);
+            svgClone.style.width = width + 'px';
+            svgClone.style.height = height + 'px';
+
+            // Serialize SVG
+            const svgData = new XMLSerializer().serializeToString(svgClone);
+            const svgBase64 = btoa(unescape(encodeURIComponent(svgData)));
+            const svgDataUrl = 'data:image/svg+xml;base64,' + svgBase64;
+
+            // Create image from SVG
+            const img = new Image();
+            img.onload = () => {
+              // Create canvas and draw image
+              const canvas = document.createElement('canvas');
+              canvas.width = width * 2; // Higher resolution
+              canvas.height = height * 2;
+              const ctx = canvas.getContext('2d');
+              ctx.fillStyle = 'white';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+              // Get PNG data URL
+              const pngDataUrl = canvas.toDataURL('image/png');
+              resolve(pngDataUrl);
+            };
+            img.onerror = () => {
+              console.warn('Failed to load SVG as image');
+              resolve(null);
+            };
+            img.src = svgDataUrl;
+          } catch (err) {
+            console.warn('SVG to PNG conversion failed:', err);
+            resolve(null);
+          }
+        });
+      }
+
+      // Capture charts from ORIGINAL DOM before cloning using html2canvas
+      // This captures the entire component including title, sources, and legend
+      async function captureChartsFromOriginal(originalContentEl) {
+        const chartImages = [];
+        const dcWrappers = originalContentEl.querySelectorAll('.dc-chart-wrapper');
+
+        for (const wrapper of dcWrappers) {
+          const dcComponent = wrapper.querySelector(
+            'datacommons-line, datacommons-bar, datacommons-map, datacommons-pie, ' +
+            'datacommons-gauge, datacommons-highlight, datacommons-ranking, datacommons-scatter, datacommons-slider'
+          );
+
+          if (!dcComponent) continue;
+
+          try {
+            // Wait for component to render
+            const rendered = await waitForComponentRender(dcComponent);
+            if (!rendered) {
+              console.warn('DC component did not render in time');
+              continue;
+            }
+
+            // Hide tooltips and hover states before capturing
+            const shadowRoot = dcComponent.shadowRoot;
+            let hiddenElements = [];
+            if (shadowRoot) {
+              // Hide tooltip elements (various possible selectors)
+              const tooltipSelectors = [
+                '.tooltip', '.dc-tooltip', '[class*="tooltip"]',
+                '.hover-card', '.hover-info', '[class*="hover"]',
+                '.highlight', '.selected', '.active-bar'
+              ];
+              tooltipSelectors.forEach(selector => {
+                shadowRoot.querySelectorAll(selector).forEach(el => {
+                  if (el.style.display !== 'none' && el.style.visibility !== 'hidden') {
+                    hiddenElements.push({ el, display: el.style.display, visibility: el.style.visibility, opacity: el.style.opacity });
+                    el.style.visibility = 'hidden';
+                    el.style.opacity = '0';
+                  }
+                });
+              });
+              // Also hide any element with inline style "pointer-events" or temporary highlights
+              shadowRoot.querySelectorAll('rect[fill-opacity], rect[stroke-width="2"], rect[stroke-width="3"]').forEach(el => {
+                const strokeWidth = el.getAttribute('stroke-width');
+                if (strokeWidth && parseInt(strokeWidth) > 1) {
+                  hiddenElements.push({ el, attr: 'stroke-width', value: strokeWidth });
+                  el.setAttribute('stroke-width', '0');
+                }
+              });
+            }
+
+            // Use html2canvas to capture the entire DC component (including title, sources, legend)
+            const rect = dcComponent.getBoundingClientRect();
+            const width = rect.width || 600;
+            const height = rect.height || 400;
+
+            // Capture the component using html2canvas with shadow DOM support
+            const canvas = await html2canvas(dcComponent, {
+              scale: 2,
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: '#ffffff',
+              logging: false,
+              width: width,
+              height: height,
+              // Enable foreign object rendering for better shadow DOM support
+              foreignObjectRendering: false,
+              onclone: (clonedDoc, clonedEl) => {
+                // Copy shadow DOM content to cloned element for rendering
+                const originalShadow = dcComponent.shadowRoot;
+                if (originalShadow) {
+                  const shadowContent = originalShadow.innerHTML;
+                  // Create a wrapper div with the shadow content
+                  const shadowWrapper = clonedDoc.createElement('div');
+                  shadowWrapper.innerHTML = shadowContent;
+                  shadowWrapper.style.cssText = 'width: 100%; height: 100%;';
+
+                  // Remove tooltip elements from cloned content
+                  const tooltipSelectors = ['.tooltip', '.dc-tooltip', '[class*="tooltip"]', '.hover-card', '.hover-info'];
+                  tooltipSelectors.forEach(selector => {
+                    shadowWrapper.querySelectorAll(selector).forEach(el => el.remove());
+                  });
+
+                  // Copy styles from shadow DOM
+                  const styles = originalShadow.querySelectorAll('style');
+                  styles.forEach(style => {
+                    const clonedStyle = clonedDoc.createElement('style');
+                    clonedStyle.textContent = style.textContent;
+                    shadowWrapper.prepend(clonedStyle);
+                  });
+                  clonedEl.appendChild(shadowWrapper);
+                }
+              }
+            });
+
+            // Restore hidden elements
+            hiddenElements.forEach(item => {
+              if (item.attr) {
+                item.el.setAttribute(item.attr, item.value);
+              } else {
+                item.el.style.visibility = item.visibility;
+                item.el.style.opacity = item.opacity;
+              }
+            });
+
+            const pngDataUrl = canvas.toDataURL('image/png');
+
+            if (pngDataUrl) {
+              chartImages.push({
+                wrapper: wrapper,
+                dataUrl: pngDataUrl,
+                width: width,
+                height: height
+              });
+            }
+          } catch (err) {
+            console.warn('Failed to capture chart:', err);
+            // Fallback: try to capture just the SVG
+            try {
+              const shadowRoot = dcComponent.shadowRoot;
+              if (shadowRoot) {
+                const svg = shadowRoot.querySelector('svg');
+                if (svg) {
+                  const rect = svg.getBoundingClientRect();
+                  const pngDataUrl = await svgToPngDataUrl(svg, rect.width || 600, rect.height || 400);
+                  if (pngDataUrl) {
+                    chartImages.push({
+                      wrapper: wrapper,
+                      dataUrl: pngDataUrl,
+                      width: rect.width || 600,
+                      height: rect.height || 400
+                    });
+                  }
+                }
+              }
+            } catch (fallbackErr) {
+              console.warn('Fallback SVG capture also failed:', fallbackErr);
+            }
+          }
+        }
+
+        return chartImages;
+      }
+
+      // Replace DC components in cloned content with captured images
+      function replaceChartsWithImages(clonedContent, chartImages, originalContentEl) {
+        const clonedWrappers = clonedContent.querySelectorAll('.dc-chart-wrapper');
+        const originalWrappers = originalContentEl.querySelectorAll('.dc-chart-wrapper');
+
+        clonedWrappers.forEach((clonedWrapper, index) => {
+          // Find matching chart image
+          const chartImage = chartImages.find(ci => ci.wrapper === originalWrappers[index]);
+
+          if (chartImage) {
+            // Create image element
+            const img = document.createElement('img');
+            img.src = chartImage.dataUrl;
+            img.style.cssText = `max-width: 100%; height: auto; display: block; margin: 16px 0; border: 1px solid #e5e7eb; border-radius: 8px;`;
+            img.width = chartImage.width;
+            img.height = chartImage.height;
+
+            // Replace wrapper content with image
+            clonedWrapper.innerHTML = '';
+            clonedWrapper.appendChild(img);
+          }
+        });
+      }
+
+      // Export a single message to PDF (includes user query)
+      async function exportMessageToPdf(messageEl) {
+        const contentEl = messageEl.querySelector('.message-content');
+        if (!contentEl) return;
+
+        const exportBtn = messageEl.querySelector('.export-pdf-btn');
+        if (exportBtn) {
+          exportBtn.classList.add('exporting');
+          exportBtn.innerHTML = '<span>Capturing charts...</span>';
+        }
+
+        try {
+          // Step 1: Capture charts from ORIGINAL DOM first (before cloning)
+          console.log('Step 1: Capturing charts from original DOM...');
+          const chartImages = await captureChartsFromOriginal(contentEl);
+          console.log(`Captured ${chartImages.length} chart(s)`);
+
+          if (exportBtn) {
+            exportBtn.innerHTML = '<span>Generating PDF...</span>';
+          }
+
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF('p', 'mm', 'a4');
+          const pageWidth = pdf.internal.pageSize.getWidth();
+          const pageHeight = pdf.internal.pageSize.getHeight();
+          const margin = 15;
+          const contentWidth = pageWidth - (margin * 2);
+          let yPosition = margin;
+
+          // Find user query (previous user message)
+          let prevSibling = messageEl.previousElementSibling;
+          while (prevSibling && !prevSibling.classList.contains('user')) {
+            prevSibling = prevSibling.previousElementSibling;
+          }
+
+          // Check if this is a follow-up (not the first user message)
+          let isFollowUp = false;
+          if (prevSibling) {
+            let checkSibling = prevSibling.previousElementSibling;
+            while (checkSibling) {
+              if (checkSibling.classList.contains('user')) {
+                isFollowUp = true;
+                break;
+              }
+              checkSibling = checkSibling.previousElementSibling;
+            }
+          }
+
+          // Use user query as the title
+          if (prevSibling && prevSibling.classList.contains('user')) {
+            const userContentEl = prevSibling.querySelector('.message-content');
+            if (userContentEl) {
+              const userQueryText = userContentEl.textContent.trim();
+
+              // Add "Follow Up:" prefix if this is a follow-up question
+              if (isFollowUp) {
+                pdf.setFontSize(10);
+                pdf.setTextColor(128, 128, 128);
+                pdf.text('Follow Up:', margin, yPosition);
+                yPosition += 6;
+              }
+
+              // User query as main title
+              pdf.setFontSize(14);
+              pdf.setTextColor(66, 133, 244); // Google Blue
+              const titleLines = pdf.splitTextToSize(userQueryText, contentWidth);
+              pdf.text(titleLines, margin, yPosition);
+              yPosition += (titleLines.length * 6) + 8;
+
+              // Thin separator line
+              pdf.setDrawColor(220, 220, 220);
+              pdf.line(margin, yPosition, pageWidth - margin, yPosition);
+              yPosition += 8;
+            }
+          }
+
+          // Step 2: Clone content
+          const clonedContent = contentEl.cloneNode(true);
+
+          // Remove export button from clone
+          const clonedExportBtn = clonedContent.querySelector('.export-pdf-btn');
+          if (clonedExportBtn) clonedExportBtn.remove();
+
+          // Remove response duration element
+          const durationEl = clonedContent.querySelector('.response-duration');
+          if (durationEl) durationEl.remove();
+
+          // Remove thinking/reasoning section (user doesn't want it in PDF)
+          const thinkingSection = clonedContent.querySelector('.thinking-section');
+          if (thinkingSection) thinkingSection.remove();
+
+          // Remove follow-up suggestions from PDF
+          const followupContainer = clonedContent.querySelector('.followup-container');
+          if (followupContainer) followupContainer.remove();
+
+          // Step 3: Replace DC components with captured images
+          replaceChartsWithImages(clonedContent, chartImages, contentEl);
+
+          // Step 4: Create temporary container with proper styling (2x spacing)
+          const tempContainer = document.createElement('div');
+          tempContainer.style.cssText = `
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            width: 750px;
+            background: white;
+            padding: 20px;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 2.0;
+            color: #222;
+            letter-spacing: 0.3px;
+            word-spacing: 0.5px;
+          `;
+
+          // Add CSS for better PDF rendering - increased line height for clean page breaks
+          const styleEl = document.createElement('style');
+          styleEl.textContent = `
+            * { letter-spacing: 0.3px; word-spacing: 0.5px; box-sizing: border-box; }
+            p { margin: 12px 0; line-height: 2.0; padding-bottom: 4px; }
+            h1, h2, h3, h4 { color: #4285F4; margin: 18px 0 10px 0; letter-spacing: 0.4px; font-weight: 600; padding-top: 4px; }
+            h2 { font-size: 1.25em; }
+            h3 { font-size: 1.1em; }
+            table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13px; }
+            th, td { border: 1px solid #ccc; padding: 12px 14px; text-align: left; letter-spacing: 0.3px; line-height: 1.8; }
+            th { background: #f0f0f0; font-weight: 600; }
+            tr:nth-child(even) { background: #f9f9f9; }
+            ul, ol { margin: 12px 0; padding-left: 28px; }
+            li { margin: 8px 0; line-height: 1.9; padding-bottom: 2px; }
+            blockquote { border-left: 4px solid #4285F4; margin: 14px 0; padding: 12px 16px; background: #f5f8ff; }
+            code { background: #f1f3f4; padding: 3px 8px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 12px; }
+            pre { background: #1e1e1e; color: #d4d4d4; padding: 14px; border-radius: 8px; overflow-x: auto; margin: 14px 0; }
+            .inline-citation { color: #4285F4; font-weight: 600; }
+            img { max-width: 100%; height: auto; margin: 14px 0; border-radius: 8px; }
+            .dc-chart-wrapper { margin: 18px 0; padding: 10px; border-bottom: 2px solid #e0e0e0; padding-bottom: 18px; }
+            .dc-chart-wrapper img { margin: 0; }
+            strong, b { font-weight: 600; letter-spacing: 0.4px; }
+          `;
+          tempContainer.appendChild(styleEl);
+          tempContainer.appendChild(clonedContent);
+          document.body.appendChild(tempContainer);
+
+          // Step 5: Capture entire content as one image
+          const canvas = await html2canvas(tempContainer, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#ffffff',
+            logging: false,
+            windowWidth: 750
+          });
+
+          // Clean up temp container
+          document.body.removeChild(tempContainer);
+
+          const imgData = canvas.toDataURL('image/png');
+          const imgWidth = contentWidth;
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+          // Calculate available space on current page
+          const availableHeight = pageHeight - yPosition - margin;
+          const fullPageHeight = pageHeight - margin - margin;
+          const scaleFactor = canvas.width / imgWidth;
+
+          // Function to find a safe cut point by scanning for whitespace rows
+          function findSafeCutPoint(canvasEl, targetY, searchRange = 150) {
+            const ctx = canvasEl.getContext('2d');
+            const width = canvasEl.width;
+
+            // Search upward from targetY to find a mostly white row (between lines)
+            for (let y = Math.floor(targetY); y > targetY - searchRange && y > 0; y--) {
+              const imageData = ctx.getImageData(0, y, width, 1);
+              const pixels = imageData.data;
+
+              // Count white/near-white pixels in this row
+              let whitePixels = 0;
+              for (let x = 0; x < width; x++) {
+                const r = pixels[x * 4];
+                const g = pixels[x * 4 + 1];
+                const b = pixels[x * 4 + 2];
+                // Consider "white" as RGB > 248 (near white background)
+                if (r > 248 && g > 248 && b > 248) {
+                  whitePixels++;
+                }
+              }
+
+              // If more than 98% of the row is white, this is a safe cut point
+              if (whitePixels / width > 0.98) {
+                return y;
+              }
+            }
+
+            // If no safe cut point found, return target minus safety margin
+            return Math.max(targetY - 50, 0);
+          }
+
+          if (imgHeight <= availableHeight) {
+            // Content fits on current page - add it directly
+            pdf.addImage(imgData, 'PNG', margin, yPosition, imgWidth, imgHeight);
+            yPosition += imgHeight;
+          } else {
+            // Content needs multiple pages - find safe cut points using pixel scanning
+            let sourceY = 0;
+            let remainingCanvasHeight = canvas.height;
+            let currentY = yPosition;
+            let isFirstPage = true;
+
+            while (remainingCanvasHeight > 0) {
+              const pageAvailHeight = isFirstPage ? availableHeight : fullPageHeight;
+              const pageAvailCanvasHeight = pageAvailHeight * scaleFactor;
+
+              let sliceHeight;
+              if (remainingCanvasHeight <= pageAvailCanvasHeight) {
+                // Last slice - use remaining height
+                sliceHeight = remainingCanvasHeight;
+              } else {
+                // Find a safe cut point by scanning for whitespace
+                const targetCut = sourceY + pageAvailCanvasHeight;
+                const safeCut = findSafeCutPoint(canvas, targetCut, 200);
+                sliceHeight = safeCut - sourceY;
+
+                // Ensure we're making progress
+                if (sliceHeight < 100) {
+                  sliceHeight = Math.min(pageAvailCanvasHeight * 0.8, remainingCanvasHeight);
+                }
+              }
+
+              const sliceCanvas = document.createElement('canvas');
+              sliceCanvas.width = canvas.width;
+              sliceCanvas.height = sliceHeight;
+              const sliceCtx = sliceCanvas.getContext('2d');
+              sliceCtx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
+
+              const sliceImgData = sliceCanvas.toDataURL('image/png');
+              const sliceImgHeight = sliceHeight / scaleFactor;
+
+              pdf.addImage(sliceImgData, 'PNG', margin, currentY, imgWidth, sliceImgHeight);
+
+              sourceY += sliceHeight;
+              remainingCanvasHeight -= sliceHeight;
+
+              if (remainingCanvasHeight > 0) {
+                pdf.addPage();
+                currentY = margin;
+                isFirstPage = false;
+              } else {
+                yPosition = currentY + sliceImgHeight;
+              }
+            }
+          }
+
+          // Add footer to all pages with Google colors and hyperlink
+          const totalPages = pdf.internal.getNumberOfPages();
+          for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+            pdf.setFontSize(8);
+            const footerY = pageHeight - 10;
+
+            // Calculate positions for centered text
+            const poweredByText = 'Powered by ';
+            const googleText = 'Google';
+            const dataCommonsText = ' Data Commons';
+            const pageText = ` | Page ${i} of ${totalPages}`;
+
+            const poweredByWidth = pdf.getTextWidth(poweredByText);
+            const googleWidth = pdf.getTextWidth(googleText);
+            const dataCommonsWidth = pdf.getTextWidth(dataCommonsText);
+            const pageWidth2 = pdf.getTextWidth(pageText);
+            const totalWidth = poweredByWidth + googleWidth + dataCommonsWidth + pageWidth2;
+
+            let xPos = (pageWidth - totalWidth) / 2;
+
+            // "Powered by " in gray
+            pdf.setTextColor(128, 128, 128);
+            pdf.text(poweredByText, xPos, footerY);
+            xPos += poweredByWidth;
+
+            // "Google" in Google colors (G-blue, o-red, o-yellow, g-blue, l-green, e-red)
+            const googleColors = [
+              [66, 133, 244],   // G - Blue
+              [234, 67, 53],    // o - Red
+              [251, 188, 5],    // o - Yellow
+              [66, 133, 244],   // g - Blue
+              [52, 168, 83],    // l - Green
+              [234, 67, 53]     // e - Red
+            ];
+            for (let j = 0; j < googleText.length; j++) {
+              pdf.setTextColor(...googleColors[j]);
+              pdf.text(googleText[j], xPos, footerY);
+              xPos += pdf.getTextWidth(googleText[j]);
+            }
+
+            // " Data Commons" in blue (as link color)
+            pdf.setTextColor(66, 133, 244);
+            pdf.text(dataCommonsText, xPos, footerY);
+            xPos += dataCommonsWidth;
+
+            // Page number in gray
+            pdf.setTextColor(128, 128, 128);
+            pdf.text(pageText, xPos, footerY);
+
+            // Add clickable link over "Google Data Commons"
+            const linkStartX = (pageWidth - totalWidth) / 2 + poweredByWidth;
+            const linkWidth = googleWidth + dataCommonsWidth;
+            pdf.link(linkStartX, footerY - 3, linkWidth, 5, { url: 'https://datacommons.org' });
+          }
+
+          // Generate filename with session ID and timestamp
+          const timestamp = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
+          const sessionId = currentConversationSessionId || 'nosession';
+          pdf.save(`data-agent-${sessionId}-${timestamp}.pdf`);
+
+        } catch (err) {
+          console.error('PDF export failed:', err);
+          alert('Failed to export PDF. Please try again.');
+        } finally {
+          if (exportBtn) {
+            exportBtn.classList.remove('exporting');
+            exportBtn.innerHTML = `
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="12" y1="18" x2="12" y2="12"/>
+                <line x1="9" y1="15" x2="12" y2="18"/>
+                <line x1="15" y1="15" x2="12" y2="18"/>
+              </svg>
+              Export PDF
+            `;
+          }
+        }
+      }
+
+      // Export entire chat conversation to PDF
+      async function exportChatToPdf() {
+        const exportBtn = document.getElementById('export-chat-btn');
+        if (exportBtn) {
+          exportBtn.disabled = true;
+          exportBtn.innerHTML = '<span>Preparing...</span>';
+        }
+
+        try {
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF('p', 'mm', 'a4');
+          const pageWidth = pdf.internal.pageSize.getWidth();
+          const pageHeight = pdf.internal.pageSize.getHeight();
+          const margin = 15;
+          const contentWidth = pageWidth - (margin * 2);
+          let yPosition = margin;
+
+          // Get all messages (skip welcome message)
+          const messages = document.querySelectorAll('#chat-messages .message');
+
+          if (messages.length === 0) {
+            alert('No messages to export. Start a conversation first!');
+            if (exportBtn) {
+              exportBtn.disabled = false;
+              exportBtn.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="12" y1="18" x2="12" y2="12"/>
+                  <line x1="9" y1="15" x2="12" y2="18"/>
+                  <line x1="15" y1="15" x2="12" y2="18"/>
+                </svg>
+                Export Chat
+              `;
+            }
+            return;
+          }
+
+          const totalMessages = messages.length;
+          let messageIndex = 0;
+          let questionCount = 0; // Track number of user questions for follow-up detection
+
+          for (const messageEl of messages) {
+            messageIndex++;
+            const isUser = messageEl.classList.contains('user');
+            const contentEl = messageEl.querySelector('.message-content');
+            if (!contentEl) continue;
+
+            // Update progress
+            if (exportBtn) {
+              exportBtn.innerHTML = `<span>Processing ${messageIndex}/${totalMessages}...</span>`;
+            }
+
+            if (isUser) {
+              questionCount++;
+              const userQueryText = contentEl.textContent.trim();
+
+              // For follow-up questions (2nd question onwards), start new page
+              if (questionCount > 1) {
+                pdf.addPage();
+                yPosition = margin;
+
+                // Add "Follow Up:" prefix
+                pdf.setFontSize(10);
+                pdf.setTextColor(128, 128, 128);
+                pdf.text('Follow Up:', margin, yPosition);
+                yPosition += 6;
+              }
+
+              // User query as title
+              pdf.setFontSize(14);
+              pdf.setTextColor(66, 133, 244);
+              const titleLines = pdf.splitTextToSize(userQueryText, contentWidth);
+              pdf.text(titleLines, margin, yPosition);
+              yPosition += (titleLines.length * 6) + 8;
+
+              // Thin separator line
+              pdf.setDrawColor(220, 220, 220);
+              pdf.line(margin, yPosition, pageWidth - margin, yPosition);
+              yPosition += 8;
+
+              continue; // Skip rendering user message content, already used as title
+            }
+
+            // For assistant messages, capture and render the response
+            // Step 1: Capture charts from ORIGINAL DOM
+            const chartImages = await captureChartsFromOriginal(contentEl);
+
+            // Step 2: Clone content
+            const clonedContent = contentEl.cloneNode(true);
+
+            // Remove export buttons and duration
+            const exportBtns = clonedContent.querySelectorAll('.export-pdf-btn');
+            exportBtns.forEach(btn => btn.remove());
+            const durationEl = clonedContent.querySelector('.response-duration');
+            if (durationEl) durationEl.remove();
+
+            // Remove thinking/reasoning section (user doesn't want it in PDF)
+            const thinkingSection = clonedContent.querySelector('.thinking-section');
+            if (thinkingSection) thinkingSection.remove();
+
+            // Remove follow-up suggestions from PDF
+            const followupContainer = clonedContent.querySelector('.followup-container');
+            if (followupContainer) followupContainer.remove();
+
+            // Step 3: Replace DC components with captured images
+            replaceChartsWithImages(clonedContent, chartImages, contentEl);
+
+            // Step 4: Create temp container with styling - increased line height for clean breaks
+            const tempContainer = document.createElement('div');
+            tempContainer.style.cssText = `
+              position: absolute;
+              left: -9999px;
+              top: 0;
+              width: 700px;
+              background: white;
+              padding: 16px;
+              font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              font-size: 13px;
+              line-height: 2.0;
+              color: #222;
+              letter-spacing: 0.3px;
+              word-spacing: 0.5px;
+            `;
+
+            // Add CSS for better rendering - increased line height for clean page breaks
+            const styleEl = document.createElement('style');
+            styleEl.textContent = `
+              * { letter-spacing: 0.3px; word-spacing: 0.5px; box-sizing: border-box; }
+              p { margin: 10px 0; line-height: 2.0; padding-bottom: 3px; }
+              h1, h2, h3, h4 { color: #4285F4; margin: 16px 0 8px 0; letter-spacing: 0.4px; font-weight: 600; padding-top: 3px; }
+              h2 { font-size: 1.2em; }
+              h3 { font-size: 1.05em; }
+              table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 12px; }
+              th, td { border: 1px solid #ccc; padding: 10px 12px; text-align: left; letter-spacing: 0.3px; line-height: 1.8; }
+              th { background: #f0f0f0; font-weight: 600; }
+              tr:nth-child(even) { background: #f9f9f9; }
+              ul, ol { margin: 10px 0; padding-left: 24px; }
+              li { margin: 6px 0; line-height: 1.9; padding-bottom: 2px; }
+              blockquote { border-left: 4px solid #4285F4; margin: 12px 0; padding: 10px 14px; background: #f5f8ff; }
+              code { background: #f1f3f4; padding: 2px 6px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 11px; }
+              pre { background: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+              .inline-citation { color: #4285F4; font-weight: 600; }
+              img { max-width: 100%; height: auto; margin: 12px 0; border-radius: 8px; }
+              .dc-chart-wrapper { margin: 16px 0; padding: 8px; border-bottom: 2px solid #e0e0e0; padding-bottom: 14px; }
+              .dc-chart-wrapper img { margin: 0; }
+              strong, b { font-weight: 600; letter-spacing: 0.4px; }
+            `;
+            tempContainer.appendChild(styleEl);
+            tempContainer.appendChild(clonedContent);
+            document.body.appendChild(tempContainer);
+
+            // Step 5: Capture
+            const canvas = await html2canvas(tempContainer, {
+              scale: 2,
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: '#ffffff',
+              logging: false,
+              windowWidth: 700
+            });
+
+            document.body.removeChild(tempContainer);
+
+            // Calculate image dimensions
+            const imgData = canvas.toDataURL('image/png');
+            const imgWidth = contentWidth - 10;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            // Smart page break handling - find safe cut points via pixel scanning
+            const availableHeight = pageHeight - yPosition - margin;
+            const fullPageHeight = pageHeight - margin - margin;
+            const scaleFactor = canvas.width / imgWidth;
+
+            // Function to find a safe cut point by scanning for whitespace rows
+            function findSafeCutPoint(canvasEl, targetY, searchRange = 150) {
+              const ctx = canvasEl.getContext('2d');
+              const width = canvasEl.width;
+
+              for (let y = Math.floor(targetY); y > targetY - searchRange && y > 0; y--) {
+                const imageData = ctx.getImageData(0, y, width, 1);
+                const pixels = imageData.data;
+
+                let whitePixels = 0;
+                for (let x = 0; x < width; x++) {
+                  const r = pixels[x * 4];
+                  const g = pixels[x * 4 + 1];
+                  const b = pixels[x * 4 + 2];
+                  if (r > 248 && g > 248 && b > 248) {
+                    whitePixels++;
+                  }
+                }
+
+                if (whitePixels / width > 0.98) {
+                  return y;
+                }
+              }
+              return Math.max(targetY - 50, 0);
+            }
+
+            if (imgHeight <= availableHeight) {
+              // Content fits on current page
+              pdf.addImage(imgData, 'PNG', margin + 5, yPosition, imgWidth, imgHeight);
+              yPosition += imgHeight + 15;
+            } else {
+              // Content needs multiple pages - find safe cut points
+              let sourceY = 0;
+              let remainingCanvasHeight = canvas.height;
+              let isFirstSlice = true;
+
+              while (remainingCanvasHeight > 0) {
+                const pageAvailHeight = isFirstSlice ? availableHeight : fullPageHeight;
+                const pageAvailCanvasHeight = pageAvailHeight * scaleFactor;
+
+                let sliceHeight;
+                if (remainingCanvasHeight <= pageAvailCanvasHeight) {
+                  sliceHeight = remainingCanvasHeight;
+                } else {
+                  const targetCut = sourceY + pageAvailCanvasHeight;
+                  const safeCut = findSafeCutPoint(canvas, targetCut, 200);
+                  sliceHeight = safeCut - sourceY;
+
+                  if (sliceHeight < 100) {
+                    sliceHeight = Math.min(pageAvailCanvasHeight * 0.8, remainingCanvasHeight);
+                  }
+                }
+
+                const sliceCanvas = document.createElement('canvas');
+                sliceCanvas.width = canvas.width;
+                sliceCanvas.height = sliceHeight;
+                const sliceCtx = sliceCanvas.getContext('2d');
+                sliceCtx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
+
+                const sliceImgData = sliceCanvas.toDataURL('image/png');
+                const sliceImgHeight = sliceHeight / scaleFactor;
+
+                pdf.addImage(sliceImgData, 'PNG', margin + 5, yPosition, imgWidth, sliceImgHeight);
+
+                sourceY += sliceHeight;
+                remainingCanvasHeight -= sliceHeight;
+
+                if (remainingCanvasHeight > 0) {
+                  pdf.addPage();
+                  yPosition = margin;
+                  isFirstSlice = false;
+                } else {
+                  yPosition += sliceImgHeight + 15;
+                }
+              }
+            }
+          }
+
+          // Add footers to all pages with Google colors and hyperlink
+          const totalPages = pdf.internal.getNumberOfPages();
+          for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+            pdf.setFontSize(8);
+            const footerY = pageHeight - 10;
+
+            // Calculate positions for centered text
+            const poweredByText = 'Powered by ';
+            const googleText = 'Google';
+            const dataCommonsText = ' Data Commons';
+            const pageText = ` | Page ${i} of ${totalPages}`;
+
+            const poweredByWidth = pdf.getTextWidth(poweredByText);
+            const googleWidth = pdf.getTextWidth(googleText);
+            const dataCommonsWidth = pdf.getTextWidth(dataCommonsText);
+            const pageTextWidth = pdf.getTextWidth(pageText);
+            const totalTextWidth = poweredByWidth + googleWidth + dataCommonsWidth + pageTextWidth;
+
+            let xPos = (pageWidth - totalTextWidth) / 2;
+
+            // "Powered by " in gray
+            pdf.setTextColor(128, 128, 128);
+            pdf.text(poweredByText, xPos, footerY);
+            xPos += poweredByWidth;
+
+            // "Google" in Google colors (G-blue, o-red, o-yellow, g-blue, l-green, e-red)
+            const googleColors = [
+              [66, 133, 244],   // G - Blue
+              [234, 67, 53],    // o - Red
+              [251, 188, 5],    // o - Yellow
+              [66, 133, 244],   // g - Blue
+              [52, 168, 83],    // l - Green
+              [234, 67, 53]     // e - Red
+            ];
+            for (let j = 0; j < googleText.length; j++) {
+              pdf.setTextColor(...googleColors[j]);
+              pdf.text(googleText[j], xPos, footerY);
+              xPos += pdf.getTextWidth(googleText[j]);
+            }
+
+            // " Data Commons" in blue (as link color)
+            pdf.setTextColor(66, 133, 244);
+            pdf.text(dataCommonsText, xPos, footerY);
+            xPos += dataCommonsWidth;
+
+            // Page number in gray
+            pdf.setTextColor(128, 128, 128);
+            pdf.text(pageText, xPos, footerY);
+
+            // Add clickable link over "Google Data Commons"
+            const linkStartX = (pageWidth - totalTextWidth) / 2 + poweredByWidth;
+            const linkWidth = googleWidth + dataCommonsWidth;
+            pdf.link(linkStartX, footerY - 3, linkWidth, 5, { url: 'https://datacommons.org' });
+          }
+
+          // Generate filename with session ID and timestamp
+          const timestamp = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
+          const sessionId = currentConversationSessionId || 'nosession';
+          pdf.save(`data-agent-chat-${sessionId}-${timestamp}.pdf`);
+
+        } catch (err) {
+          console.error('Chat export failed:', err);
+          alert('Failed to export chat. Please try again.');
+        } finally {
+          if (exportBtn) {
+            exportBtn.disabled = false;
+            exportBtn.innerHTML = `
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="12" y1="18" x2="12" y2="12"/>
+                <line x1="9" y1="15" x2="12" y2="18"/>
+                <line x1="15" y1="15" x2="12" y2="18"/>
+              </svg>
+              Export Chat
+            `;
+          }
+        }
+      }
+
+      // Add export button to assistant messages
+      function addExportButton(messageEl) {
+        if (!messageEl.classList.contains('assistant')) return;
+
+        const contentEl = messageEl.querySelector('.message-content');
+        if (!contentEl) return;
+
+        // Check if button already exists
+        if (contentEl.querySelector('.export-pdf-btn')) return;
+
+        const exportBtn = document.createElement('button');
+        exportBtn.className = 'export-pdf-btn';
+        exportBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <line x1="9" y1="15" x2="12" y2="18"/>
+            <line x1="15" y1="15" x2="12" y2="18"/>
+          </svg>
+          Export PDF
+        `;
+        exportBtn.onclick = () => exportMessageToPdf(messageEl);
+
+        // Insert before follow-up container if exists, else at end
+        const followupContainer = contentEl.querySelector('.followup-container');
+        if (followupContainer) {
+          followupContainer.insertAdjacentElement('beforebegin', exportBtn);
+        } else {
+          contentEl.appendChild(exportBtn);
+        }
+      }
+
       // Render Data Commons Web Component based on chart data
       function renderDCComponent(chartData) {
         if (!chartData || (!chartData.variableDcid && (!chartData.variableDcids || chartData.variableDcids.length === 0))) {
@@ -3349,6 +4372,12 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         chatInput.addEventListener('keydown', handleKeyDown);
         chatInput.addEventListener('input', autoResize);
 
+        // Export chat button event listener
+        const exportChatBtn = document.getElementById('export-chat-btn');
+        if (exportChatBtn) {
+          exportChatBtn.addEventListener('click', exportChatToPdf);
+        }
+
         // Settings toggle tab
         if (settingsToggle) {
           settingsToggle.addEventListener('click', () => {
@@ -3664,6 +4693,11 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         document.querySelectorAll('.suggestion').forEach(btn => {
           btn.disabled = false;
         });
+        // Enable export chat button
+        const exportChatBtn = document.getElementById('export-chat-btn');
+        if (exportChatBtn) {
+          exportChatBtn.disabled = false;
+        }
         // Activate branding header when connected
         if (brandingHeader) {
           brandingHeader.classList.remove('inactive');
@@ -4434,6 +5468,9 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
               await injectChartIntoMessage(messageEl, result.chartConfig);
             }
 
+            // Add export button to the message
+            addExportButton(streamingMessage.getElement());
+
             // Add to conversation history
             conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
             conversationHistory.push({ role: 'model', parts: [{ text: result.text }] });
@@ -4516,6 +5553,9 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
             const noDataMsg = formatNoDataMessage(dataStatus.message);
             streamingMessage.setText(noDataMsg);
             streamingMessage.finalize();
+
+            // Add export button to the message
+            addExportButton(streamingMessage.getElement());
 
             // Update conversation history
             conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
@@ -4692,6 +5732,9 @@ ${rawResultsJson}
           }
           console.groupEnd(); // End CHART RENDERING DEBUG
           console.groupEnd(); // End TWO-PHASE STREAMING
+
+          // Add export button to the message
+          addExportButton(streamingMessage.element);
 
           // Update conversation history
           conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
