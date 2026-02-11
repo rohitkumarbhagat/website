@@ -138,3 +138,105 @@ Node: dcid:dc/g/ASI_PerCapita
 typeOf: dcs:StatVarGroup
 name: "Per-Capita Factory Metrics"
 specializationOf: dcid:dc/g/ASI
+
+# ============================================================
+# MOSPI Gross Value Added (GVA) Data
+# ============================================================
+
+# Root group for GVA data - connects to dc/g/Root (top level)
+Node: dcid:dc/g/GVA
+typeOf: dcs:StatVarGroup
+name: "MOSPI Gross Value Added"
+specializationOf: dcid:dc/g/Root
+
+# Sub-group for Agriculture GVA
+Node: dcid:dc/g/GVA_Agriculture
+typeOf: dcs:StatVarGroup
+name: "Agriculture, Forestry & Fishing"
+specializationOf: dcid:dc/g/GVA
+
+# Sub-group for Mining GVA
+Node: dcid:dc/g/GVA_Mining
+typeOf: dcs:StatVarGroup
+name: "Mining & Quarrying"
+specializationOf: dcid:dc/g/GVA
+
+# Sub-group for Manufacturing GVA
+Node: dcid:dc/g/GVA_Manufacturing
+typeOf: dcs:StatVarGroup
+name: "Manufacturing"
+specializationOf: dcid:dc/g/GVA
+
+# Sub-group for Utilities GVA
+Node: dcid:dc/g/GVA_Utilities
+typeOf: dcs:StatVarGroup
+name: "Electricity, Gas & Water Supply"
+specializationOf: dcid:dc/g/GVA
+
+# Sub-group for Construction GVA
+Node: dcid:dc/g/GVA_Construction
+typeOf: dcs:StatVarGroup
+name: "Construction"
+specializationOf: dcid:dc/g/GVA
+
+# Sub-group for Services GVA
+Node: dcid:dc/g/GVA_Services
+typeOf: dcs:StatVarGroup
+name: "Services"
+specializationOf: dcid:dc/g/GVA
+
+# ============================================================
+# MOSPI Worker Population Ratio (PLFS) Data
+# ============================================================
+
+# Root group for PLFS data - connects to dc/g/Root (top level)
+Node: dcid:dc/g/PLFS
+typeOf: dcs:StatVarGroup
+name: "MOSPI Worker Population Ratio"
+specializationOf: dcid:dc/g/Root
+
+# Sub-group for Rural Worker Population Ratios
+Node: dcid:dc/g/PLFS_Rural
+typeOf: dcs:StatVarGroup
+name: "Rural Worker Population Ratio"
+specializationOf: dcid:dc/g/PLFS
+
+# Sub-group for Urban Worker Population Ratios
+Node: dcid:dc/g/PLFS_Urban
+typeOf: dcs:StatVarGroup
+name: "Urban Worker Population Ratio"
+specializationOf: dcid:dc/g/PLFS
+
+# Sub-group for Education-wise Worker Population Ratios
+Node: dcid:dc/g/PLFS_Education
+typeOf: dcs:StatVarGroup
+name: "Education-wise Worker Population Ratio"
+specializationOf: dcid:dc/g/PLFS
+
+# ============================================================
+# NITI Aayog Population Projections Data
+# ============================================================
+
+# Root group for NITI data - connects to dc/g/Root (top level)
+Node: dcid:dc/g/NITI
+typeOf: dcs:StatVarGroup
+name: "NITI Aayog Population Projections"
+specializationOf: dcid:dc/g/Root
+
+# Sub-group for Total Population Projections
+Node: dcid:dc/g/NITI_TotalPopulation
+typeOf: dcs:StatVarGroup
+name: "Total Population"
+specializationOf: dcid:dc/g/NITI
+
+# Sub-group for Urban Population Projections
+Node: dcid:dc/g/NITI_UrbanPopulation
+typeOf: dcs:StatVarGroup
+name: "Urban Population"
+specializationOf: dcid:dc/g/NITI
+
+# Sub-group for Gender-wise Population Projections
+Node: dcid:dc/g/NITI_GenderPopulation
+typeOf: dcs:StatVarGroup
+name: "Gender-wise Population"
+specializationOf: dcid:dc/g/NITI

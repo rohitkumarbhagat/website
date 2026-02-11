@@ -1586,10 +1586,9 @@ Instructions:
 6. Choose appropriate viz_type for each chart (line for time series, bar for comparison)
 7. Give each chart a descriptive title related to data it is showing but do NOT include year/date in the title.
 8. For ALL bar charts, ALWAYS include a date field:
-   - date format must be YYYY (e.g., "2021", "2022")
-   - if user specifies a year, use that year
-   - otherwise, find the LATEST year from the time_series data in tool results
-   - look for the most recent year key in the time_series objects
+   - date can be in formats YYYY, YYYY-MM, or YYYY-MM-DD (e.g., "2021", "2022", "2021-01", "2022-01-01")
+   - prefer explicit date from user query or tool result context
+   - if no reliable explicit date is available, omit date
 
 Set should_render to false if no meaningful data for visualization."""
 

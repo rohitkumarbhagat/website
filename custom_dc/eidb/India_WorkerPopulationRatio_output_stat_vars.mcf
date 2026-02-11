@@ -1,0 +1,5107 @@
+Node: dcid:Count_Person_15To29Years
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+
+Node: dcid:Count_Person_15To29Years_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Female
+
+Node: dcid:Count_Person_15To29Years_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To29Years_Female_Rural_Worker_AsAFractionOf_Count_Person_15To29Years_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Female_Rural
+age: [15 29 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To29Years_Female_Urban_Worker_AsAFractionOf_Count_Person_15To29Years_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Female_Urban
+age: [15 29 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Female_Worker_AsAFractionOf_Count_Person_15To29Years_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Female
+age: [15 29 Years]
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Male
+
+Node: dcid:Count_Person_15To29Years_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To29Years_Male_Rural_Worker_AsAFractionOf_Count_Person_15To29Years_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Male_Rural
+age: [15 29 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To29Years_Male_Urban_Worker_AsAFractionOf_Count_Person_15To29Years_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Male_Urban
+age: [15 29 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Male_Worker_AsAFractionOf_Count_Person_15To29Years_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Male
+age: [15 29 Years]
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To29Years_Rural_Worker_AsAFractionOf_Count_Person_15To29Years_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Rural
+age: [15 29 Years]
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 29 Years]
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To29Years_Urban_Worker_AsAFractionOf_Count_Person_15To29Years_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years_Urban
+age: [15 29 Years]
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To29Years_Worker_AsAFractionOf_Count_Person_15To29Years
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To29Years
+age: [15 29 Years]
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To59Years_Female_Rural_Worker_AsAFractionOf_Count_Person_15To59Years_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Female_Rural
+age: [15 59 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To59Years_Female_Urban_Worker_AsAFractionOf_Count_Person_15To59Years_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Female_Urban
+age: [15 59 Years]
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Female_Worker_AsAFractionOf_Count_Person_15To59Years_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Female
+age: [15 59 Years]
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To59Years_Male_Rural_Worker_AsAFractionOf_Count_Person_15To59Years_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Male_Rural
+age: [15 59 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To59Years_Male_Urban_Worker_AsAFractionOf_Count_Person_15To59Years_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Male_Urban
+age: [15 59 Years]
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Male_Worker_AsAFractionOf_Count_Person_15To59Years_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Male
+age: [15 59 Years]
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_15To59Years_Rural_Worker_AsAFractionOf_Count_Person_15To59Years_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Rural
+age: [15 59 Years]
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: [15 59 Years]
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_15To59Years_Urban_Worker_AsAFractionOf_Count_Person_15To59Years_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years_Urban
+age: [15 59 Years]
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_15To59Years_Worker_AsAFractionOf_Count_Person_15To59Years
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_15To59Years
+age: [15 59 Years]
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Christianity_Worker_AsAFractionOf_Count_Person_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Christianity
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Female_Christianity_Worker_AsAFractionOf_Count_Person_Female_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Christianity
+gender: dcid:Female
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Female_Hinduism_Worker_AsAFractionOf_Count_Person_Female_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Hinduism
+gender: dcid:Female
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Female_Islam_Worker_AsAFractionOf_Count_Person_Female_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Islam
+gender: dcid:Female
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Female_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Female_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_MOSPIOtherSocialCategory
+gender: dcid:Female
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Female_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Female_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_OtherBackwardClass
+gender: dcid:Female
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Female_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Female_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Female_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_Christianity
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Female_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Female_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_Hinduism
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Female_Rural_Islam_Worker_AsAFractionOf_Count_Person_Female_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_Islam
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Female_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Female_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_MOSPIOtherSocialCategory
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Female_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Female_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_OtherBackwardClass
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Female_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Female_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_ScheduledCaste
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Female_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Female_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_ScheduledTribe
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Female_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Female_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural_Sikhism
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Rural_Worker_AsAFractionOf_Count_Person_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Rural
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Female_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Female_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_ScheduledCaste
+gender: dcid:Female
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Female_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Female_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_ScheduledTribe
+gender: dcid:Female
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Female_Sikhism_Worker_AsAFractionOf_Count_Person_Female_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Sikhism
+gender: dcid:Female
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Female_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Female_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Female_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_Christianity
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Female_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Female_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_Hinduism
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Female_Urban_Islam_Worker_AsAFractionOf_Count_Person_Female_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_Islam
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Female_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Female_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_MOSPIOtherSocialCategory
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Female_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Female_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_OtherBackwardClass
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Female_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Female_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_ScheduledCaste
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Female_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Female_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_ScheduledTribe
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Female_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Female_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban_Sikhism
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Urban_Worker_AsAFractionOf_Count_Person_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female_Urban
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Female_Worker_AsAFractionOf_Count_Person_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Female
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Hinduism_Worker_AsAFractionOf_Count_Person_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Hinduism
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Islam_Worker_AsAFractionOf_Count_Person_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Islam
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_MOSPIOtherSocialCategory
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Male_Christianity_Worker_AsAFractionOf_Count_Person_Male_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Christianity
+gender: dcid:Male
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Male_Hinduism_Worker_AsAFractionOf_Count_Person_Male_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Hinduism
+gender: dcid:Male
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Male_Islam_Worker_AsAFractionOf_Count_Person_Male_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Islam
+gender: dcid:Male
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Male_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Male_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_MOSPIOtherSocialCategory
+gender: dcid:Male
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Male_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Male_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_OtherBackwardClass
+gender: dcid:Male
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Male_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Male_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Male_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_Christianity
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Male_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Male_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_Hinduism
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Male_Rural_Islam_Worker_AsAFractionOf_Count_Person_Male_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_Islam
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Male_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Male_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_MOSPIOtherSocialCategory
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Male_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Male_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_OtherBackwardClass
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Male_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Male_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_ScheduledCaste
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Male_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Male_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_ScheduledTribe
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Male_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Male_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural_Sikhism
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Rural_Worker_AsAFractionOf_Count_Person_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Rural
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Male_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Male_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_ScheduledCaste
+gender: dcid:Male
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Male_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Male_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_ScheduledTribe
+gender: dcid:Male
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Male_Sikhism_Worker_AsAFractionOf_Count_Person_Male_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Sikhism
+gender: dcid:Male
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Male_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Male_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Male_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_Christianity
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Male_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Male_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_Hinduism
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Male_Urban_Islam_Worker_AsAFractionOf_Count_Person_Male_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_Islam
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Male_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Male_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_MOSPIOtherSocialCategory
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Male_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Male_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_OtherBackwardClass
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Male_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Male_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_ScheduledCaste
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Male_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Male_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_ScheduledTribe
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Male_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Male_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban_Sikhism
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Urban_Worker_AsAFractionOf_Count_Person_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male_Urban
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Male_Worker_AsAFractionOf_Count_Person_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Male
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_OtherBackwardClass
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_Christianity
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_Hinduism
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Rural_Islam_Worker_AsAFractionOf_Count_Person_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_Islam
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_MOSPIOtherSocialCategory
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_OtherBackwardClass
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_ScheduledCaste
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_ScheduledTribe
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural_Sikhism
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Rural_Worker_AsAFractionOf_Count_Person_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Rural
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_ScheduledCaste_Worker_AsAFractionOf_Count_Person_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_ScheduledCaste
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_ScheduledTribe_Worker_AsAFractionOf_Count_Person_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_ScheduledTribe
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Sikhism_Worker_AsAFractionOf_Count_Person_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Sikhism
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_Christianity
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_Hinduism
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Urban_Islam_Worker_AsAFractionOf_Count_Person_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_Islam
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_MOSPIOtherSocialCategory
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_OtherBackwardClass
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_ScheduledCaste
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_ScheduledTribe
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban_Sikhism
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Urban_Worker_AsAFractionOf_Count_Person_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Urban
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Worker_AsAFractionOf_Count_Person
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+
+Node: dcid:Count_Person_Years15Onwards_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Christianity
+age: dcid:Years15Onwards
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentDiploma
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentDiploma
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Diploma
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentGraduate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentGraduate
+age: dcid:Years15Onwards
+educationalAttainment: dcid:Graduate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentHigherSecondaryEducation
+age: dcid:Years15Onwards
+educationalAttainment: dcid:HigherSecondaryEducation
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentMiddleSchool
+age: dcid:Years15Onwards
+educationalAttainment: dcid:MiddleSchool
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPostGraduateAndAbove
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PostGraduateAndAbove
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Female_Literate
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Female
+literacyStatus: dcid:Literate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Literate
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+literacyStatus: dcid:Literate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentPrimaryEducation_Male_Literate
+age: dcid:Years15Onwards
+educationalAttainment: dcid:PrimaryEducation
+gender: dcid:Male
+literacyStatus: dcid:Literate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducationAndAbove
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducationAndAbove
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Female
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Male
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Rural
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Urban
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation_Worker_AsAFractionOf_Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_EducationalAttainmentSecondaryEducation
+age: dcid:Years15Onwards
+educationalAttainment: dcid:SecondaryEducation
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+
+Node: dcid:Count_Person_Years15Onwards_Female_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Female_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Illiterate_Rural
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Illiterate_Urban
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Illiterate_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Illiterate
+age: dcid:Years15Onwards
+gender: dcid:Female
+literacyStatus: dcid:Illiterate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Female_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Islam
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Female_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Female_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_Islam
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Rural
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Female_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Female_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Female
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Female
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_Islam
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female_Urban
+age: dcid:Years15Onwards
+gender: dcid:Female
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Female_Worker_AsAFractionOf_Count_Person_Years15Onwards_Female
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Female
+age: dcid:Years15Onwards
+gender: dcid:Female
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Hinduism
+age: dcid:Years15Onwards
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Illiterate_Rural
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Illiterate_Urban
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Illiterate_Worker_AsAFractionOf_Count_Person_Years15Onwards_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Illiterate
+age: dcid:Years15Onwards
+literacyStatus: dcid:Illiterate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Islam
+age: dcid:Years15Onwards
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+
+Node: dcid:Count_Person_Years15Onwards_Male_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Male_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Illiterate_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Illiterate_Rural
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Illiterate_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Illiterate_Urban
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Illiterate_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Illiterate
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Illiterate
+age: dcid:Years15Onwards
+gender: dcid:Male
+literacyStatus: dcid:Illiterate
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Male_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Islam
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Male_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Male_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_Islam
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Rural
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Male_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Male_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Male
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Male
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_Christianity
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_Hinduism
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_Islam
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_OtherBackwardClass
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledCaste
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_ScheduledTribe
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban_Sikhism
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male_Urban
+age: dcid:Years15Onwards
+gender: dcid:Male
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Male_Worker_AsAFractionOf_Count_Person_Years15Onwards_Male
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Male
+age: dcid:Years15Onwards
+gender: dcid:Male
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_OtherBackwardClass
+age: dcid:Years15Onwards
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_Christianity
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_Hinduism
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_Islam
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Rural_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Rural_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_OtherBackwardClass
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Rural_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_ScheduledCaste
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Rural_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_ScheduledTribe
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural_Sikhism
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Rural_Worker_AsAFractionOf_Count_Person_Years15Onwards_Rural
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Rural
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Rural
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_ScheduledCaste
+age: dcid:Years15Onwards
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_ScheduledTribe
+age: dcid:Years15Onwards
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Sikhism
+age: dcid:Years15Onwards
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Christianity_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_Christianity
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_Christianity
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Christianity
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Hinduism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_Hinduism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_Hinduism
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Hinduism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Islam_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_Islam
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_Islam
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Islam
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+
+Node: dcid:Count_Person_Years15Onwards_Urban_MOSPIOtherSocialCategory_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_MOSPIOtherSocialCategory
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_MOSPIOtherSocialCategory
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:MOSPI_OtherSocialCategory
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+
+Node: dcid:Count_Person_Years15Onwards_Urban_OtherBackwardClass_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_OtherBackwardClass
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_OtherBackwardClass
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:OtherBackwardClass
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+
+Node: dcid:Count_Person_Years15Onwards_Urban_ScheduledCaste_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_ScheduledCaste
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_ScheduledCaste
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledCaste
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+
+Node: dcid:Count_Person_Years15Onwards_Urban_ScheduledTribe_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_ScheduledTribe
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_ScheduledTribe
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+socialCategory: dcid:ScheduledTribe
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Sikhism_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban_Sikhism
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban_Sikhism
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+religion: dcid:Sikhism
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Urban_Worker_AsAFractionOf_Count_Person_Years15Onwards_Urban
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards_Urban
+age: dcid:Years15Onwards
+placeOfResidenceClassification: dcid:Urban
+workerStatus: dcid:Worker
+
+Node: dcid:Count_Person_Years15Onwards_Worker_AsAFractionOf_Count_Person_Years15Onwards
+typeOf: dcid:StatisticalVariable
+populationType: dcid:Person
+measuredProperty: dcid:count
+statType: dcid:measuredValue
+measurementDenominator: dcid:Count_Person_Years15Onwards
+age: dcid:Years15Onwards
+workerStatus: dcid:Worker
+
