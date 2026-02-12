@@ -272,7 +272,7 @@ class SessionLogger:
             "tool_name": tool_name,
             "duration_ms": round(duration_ms, 2),
             "status": status,
-            "result": result_str[:2000] + "..." if len(result_str) > 2000 else result_str
+            "result": result_str  # No truncation - full result for debugging
         })
 
     def log_kb_query(self, message: str, result: str, duration_ms: float):
@@ -281,7 +281,7 @@ class SessionLogger:
             "query": message,
             "duration_ms": round(duration_ms, 2),
             "result_length": len(result),
-            "result_preview": result[:500] + "..." if len(result) > 500 else result
+            "result": result  # No truncation - full result for debugging
         })
 
     def log_synthesis_start(self, context_parts: list):
@@ -308,10 +308,7 @@ class SessionLogger:
         })
 
     def _truncate_response(self, response: dict) -> dict:
-        """Truncate large responses for logging."""
-        response_str = json.dumps(response, default=str)
-        if len(response_str) > 5000:
-            return {"_truncated": True, "length": len(response_str), "preview": response_str[:5000]}
+        """Return full response for logging (no truncation)."""
         return response
 
 
@@ -600,6 +597,58 @@ def check_data_availability(tool_calls_list: list) -> dict:
         'observations_called': observations_called,
         'message': message
     }
+
+
+def extract_provenance_from_mcp_results(tool_calls_list: list) -> list:
+    """Extract provenance URLs from MCP tool call results.
+
+    Parses the source_metadata from get_observations results to extract
+    import_name and provenance_url for proper source attribution.
+
+    Args:
+        tool_calls_list: List of tool call dicts with 'name', 'arguments', 'result'
+
+    Returns:
+        list of dicts: [{"name": "Import Name", "url": "https://..."}]
+    """
+    sources = []
+    seen_urls = set()
+
+    for tc in tool_calls_list:
+        if tc.get('name') != 'get_observations':
+            continue
+
+        result_str = tc.get('result', '')
+        try:
+            # The result is nested JSON - parse outer layer first
+            if isinstance(result_str, str):
+                outer = json.loads(result_str)
+                if 'content' in outer and outer['content']:
+                    # Parse inner text JSON
+                    inner_text = outer['content'][0].get('text', '{}')
+                    result_data = json.loads(inner_text)
+                else:
+                    result_data = outer
+            else:
+                result_data = result_str
+
+            # Extract from source_metadata
+            if 'source_metadata' in result_data:
+                metadata = result_data['source_metadata']
+                url = metadata.get('provenance_url', '')
+                name = metadata.get('import_name', '')
+
+                if url and url not in seen_urls:
+                    seen_urls.add(url)
+                    sources.append({
+                        "name": name or "Data Source",
+                        "url": url
+                    })
+
+        except (json.JSONDecodeError, KeyError, TypeError, IndexError):
+            continue
+
+    return sources
 
 
 # Flask Routes
@@ -1277,7 +1326,7 @@ def execute_mcp_tool_loop(
             tool_call_info = {
                 "name": tool_name,
                 "arguments": tool_args,
-                "result": result_text[:500] + "..." if len(result_text) > 500 else result_text,
+                "result": result_text,  # No truncation - full result for source extraction
                 "status": "error" if "error" in result_text.lower() else "success"
             }
             tool_calls_list.append(tool_call_info)
@@ -1834,6 +1883,11 @@ def chat_stream():
             data_status = check_data_availability(tool_calls_list)
             yield f"data: {json.dumps({'data_status': data_status})}\n\n"
 
+            # Extract and send provenance sources from MCP results
+            mcp_sources = extract_provenance_from_mcp_results(tool_calls_list)
+            if mcp_sources:
+                yield f"data: {json.dumps({'mcp_sources': mcp_sources})}\n\n"
+
             # Start chart config in background (runs parallel with KB + synthesis)
             if mcp_results:
                 def run_chart_config():
@@ -1902,7 +1956,13 @@ def chat_stream():
         # Build synthesis context with source labels for citations
         context_parts = []
         if mcp_results:
-            context_parts.append(f"**DATA RESULTS [Source: Data Commons]:**\n{mcp_results}")
+            # Format extracted sources as markdown links for synthesis
+            mcp_sources = extract_provenance_from_mcp_results(tool_calls_list)
+            if mcp_sources:
+                source_links = ", ".join([f"[{s['name']}]({s['url']})" for s in mcp_sources])
+            else:
+                source_links = "Data Commons"
+            context_parts.append(f"**DATA RESULTS [Sources: {source_links}]:**\n{mcp_results}")
         if kb_response:
             # Include document names from kb_sources for proper citation
             kb_source_names = ", ".join([s['title'] for s in kb_sources]) if kb_sources else "Knowledge Base"
