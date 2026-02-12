@@ -369,7 +369,7 @@ def mcp_request(method: str, params: dict = None, is_notification: bool = False)
             MCP_URL,
             json=payload,
             headers=headers,
-            timeout=120,
+            timeout=300,
             stream=True
         )
 
@@ -843,7 +843,7 @@ def gemini_request(
                     json=payload,
                     headers={"Content-Type": "application/json"},
                     stream=True,
-                    timeout=120
+                    timeout=300
                 )
                 # Check for rate limit before streaming
                 if response.status_code == 429:
@@ -860,7 +860,7 @@ def gemini_request(
                     url,
                     json=payload,
                     headers={"Content-Type": "application/json"},
-                    timeout=120
+                    timeout=300
                 )
 
                 # Check for rate limit - immediately switch key
@@ -1063,7 +1063,7 @@ def gemini_request_with_thought_streaming(
                 json=payload,
                 headers={"Content-Type": "application/json"},
                 stream=True,
-                timeout=120
+                timeout=300
             )
 
             # Check for rate limit before streaming
@@ -1430,7 +1430,7 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
                 json=payload,
                 headers={"Content-Type": "application/json"},
                 stream=True,
-                timeout=60
+                timeout=300
             )
 
             # Check for rate limit - immediately switch key
