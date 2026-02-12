@@ -4430,14 +4430,6 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           });
         }
 
-        // Dev Mode toggle in navbar (under Tools dropdown)
-        const navbarDevToggle = document.getElementById('navbar-dev-toggle');
-        if (navbarDevToggle) {
-          navbarDevToggle.addEventListener('change', (e) => {
-            toggleSidebars(e.target.checked);
-          });
-        }
-
         // Update status badges
         updateStatusBadges();
 
@@ -4501,13 +4493,10 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         // Initialize voice input
         initVoiceInput();
 
-        // Initialize Dev Mode state (hidden by default, toggle is OFF)
-        const sidebarsVisible = localStorage.getItem('sidebars_visible') === 'true';
-        const navbarDevToggleEl = document.getElementById('navbar-dev-toggle');
-        if (navbarDevToggleEl) {
-          navbarDevToggleEl.checked = sidebarsVisible;
-        }
-        toggleSidebars(sidebarsVisible);
+        // Initialize Dev Mode state from URL parameter (?dev=true)
+        const urlParams = new URLSearchParams(window.location.search);
+        const devModeEnabled = urlParams.get('dev') === 'true';
+        toggleSidebars(devModeEnabled);
 
         // Auto-connect based on config source
         // Backend mode auto-connects without requiring API key
@@ -5029,8 +5018,6 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           document.body.classList.remove('dev-mode-on');
         }
 
-        // Persist preference
-        localStorage.setItem('sidebars_visible', show.toString());
       }
 
       // Clear tool calls from left sidebar
