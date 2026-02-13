@@ -129,6 +129,8 @@ def get_api_keys(demo_mode: bool = False) -> list:
         demo_mode: If True, returns demo_api_keys for internal demo usage.
                    Demo keys are reserved for events/demos and won't be
                    affected by regular traffic rate limits.
+                   If demo_mode=True but no demo keys configured, returns
+                   empty list (will cause API call to fail - NO fallback).
     """
     config = load_config()
     gemini_config = config.get("gemini", {})
@@ -137,8 +139,10 @@ def get_api_keys(demo_mode: bool = False) -> list:
         demo_keys = gemini_config.get("demo_api_keys", [])
         if demo_keys:
             logger.info(f"Using demo API keys pool ({len(demo_keys)} keys)")
-            return demo_keys
-        logger.warning("Demo mode requested but no demo_api_keys configured, falling back to regular keys")
+        else:
+            logger.error("Demo mode requested but no demo_api_keys configured - will fail (no fallback to regular keys)")
+        # Always return demo_keys when demo_mode=True (even if empty - let it fail)
+        return demo_keys
 
     keys = gemini_config.get("api_keys", [])
     if not keys:
@@ -1406,7 +1410,7 @@ def get_api_key_filestore_mapping(demo_mode: bool = False) -> dict:
     return mapping
 
 
-def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None, thought_callback: callable = None, demo_mode: bool = False) -> dict:
+def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None, thought_callback: callable = None, demo_mode: bool = False, effective_config: dict = None) -> dict:
     """Execute Knowledge Base query using file search with key rotation and thought streaming.
 
     Each API key automatically uses its paired filestore from the config mapping.
@@ -1417,13 +1421,14 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
         thought_callback: Optional callback for streaming thought chunks.
                          Signature: callback(thought_text: str) -> None
         demo_mode: If True, uses demo API keys and filestores reserved for internal demos.
+        effective_config: Optional config dict with query param overrides applied.
 
     Returns:
         dict with keys:
         - response: str (the response text)
         - sources: list of dicts with 'title' and 'uri'
     """
-    config = load_config()
+    config = effective_config if effective_config else load_config()
     kb_config = config.get("knowledge_base", {})
 
     if not kb_config.get("enabled", False):
@@ -1957,7 +1962,8 @@ def chat_stream():
                     kb_result = execute_kb_query(
                         user_message, session_logger=session_logger,
                         thought_callback=lambda t: thought_callback(t, 'kb'),
-                        demo_mode=demo_mode
+                        demo_mode=demo_mode,
+                        effective_config=effective_config
                     )
                     kb_result_holder['response'] = kb_result.get("response", "")
                     kb_result_holder['sources'] = kb_result.get("sources", [])

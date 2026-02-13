@@ -2907,6 +2907,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       const urlParams = new URLSearchParams(window.location.search);
       const urlConfigOverrides = {
         key: urlParams.get('key'),
+        demo: urlParams.get('demo'),
         model: urlParams.get('model'),
         kb: urlParams.get('kb'),
         mcp_thinking: urlParams.get('mcp_thinking'),
@@ -4429,6 +4430,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           const indicator = document.createElement('div');
           indicator.className = 'config-override-indicator';
           const overrideDetails = [];
+          if (urlConfigOverrides.demo) overrideDetails.push(`🎯 DEMO MODE`);
           if (urlConfigOverrides.model) overrideDetails.push(`model: ${urlConfigOverrides.model}`);
           if (urlConfigOverrides.kb) overrideDetails.push(`kb: ${urlConfigOverrides.kb}`);
           if (urlConfigOverrides.mcp_thinking) overrideDetails.push(`mcp_thinking: ${urlConfigOverrides.mcp_thinking}`);
@@ -4845,6 +4847,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           if (urlConfigOverrides.key) {
             const params = new URLSearchParams();
             if (urlConfigOverrides.key) params.append('key', urlConfigOverrides.key);
+            if (urlConfigOverrides.demo) params.append('demo', urlConfigOverrides.demo);
             if (urlConfigOverrides.model) params.append('model', urlConfigOverrides.model);
             if (urlConfigOverrides.kb) params.append('kb', urlConfigOverrides.kb);
             if (urlConfigOverrides.mcp_thinking) params.append('mcp_thinking', urlConfigOverrides.mcp_thinking);
