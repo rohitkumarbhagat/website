@@ -1910,6 +1910,51 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       text-decoration: underline;
     }
 
+    .disclaimer-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #5d4037;
+      line-height: 1.5;
+      text-align: left;
+      width: 100%;
+    }
+
+    .disclaimer-notice.hidden {
+      display: none;
+    }
+
+    .disclaimer-notice strong {
+      color: #e65100;
+    }
+
+    .disclaimer-text {
+      flex: 1;
+    }
+
+    .disclaimer-close {
+      background: none;
+      border: none;
+      color: #5d4037;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+
+    .disclaimer-close:hover {
+      opacity: 1;
+    }
+
     /* Responsive - 3 Column Layout */
     @media (max-width: 1200px) {
       .left-sidebar {
@@ -2084,6 +2129,11 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       .google-footer-content {
         font-size: 0.8rem;
         flex-wrap: wrap;
+      }
+
+      .disclaimer-notice {
+        font-size: 0.7rem;
+        padding: 8px 12px;
       }
     }
 
@@ -2510,6 +2560,12 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
             <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
           </span>
           <a href="https://datacommons.org" target="_blank" rel="noopener">Data Commons</a>
+        </div>
+        <div class="disclaimer-notice" id="disclaimer-notice">
+          <div class="disclaimer-text">
+            <strong>Disclaimer:</strong> While India Data Commons strives for precision, AI responses may misinterpret nuances in complex datasets or include errors. Users should verify specific statistics against the original government or institutional records.<br><strong>Liability:</strong> Insights provided here are for informational purposes only and do not constitute professional advice or official government reporting.
+          </div>
+          <button class="disclaimer-close" id="disclaimer-close" title="Dismiss disclaimer">&times;</button>
         </div>
       </footer>
     </main>
@@ -4396,6 +4452,20 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         const exportChatBtn = document.getElementById('export-chat-btn');
         if (exportChatBtn) {
           exportChatBtn.addEventListener('click', exportChatToPdf);
+        }
+
+        // Disclaimer close button
+        const disclaimerClose = document.getElementById('disclaimer-close');
+        const disclaimerNotice = document.getElementById('disclaimer-notice');
+        if (disclaimerClose && disclaimerNotice) {
+          disclaimerClose.addEventListener('click', () => {
+            disclaimerNotice.classList.add('hidden');
+            localStorage.setItem('disclaimer_dismissed', 'true');
+          });
+          // Check if disclaimer was previously dismissed
+          if (localStorage.getItem('disclaimer_dismissed') === 'true') {
+            disclaimerNotice.classList.add('hidden');
+          }
         }
 
         // Settings toggle tab
