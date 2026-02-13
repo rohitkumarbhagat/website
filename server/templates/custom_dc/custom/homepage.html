@@ -1694,6 +1694,14 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       transform: scale(1.05);
     }
 
+    #send-btn.send-btn-stop {
+      background: var(--danger);
+    }
+
+    #send-btn.send-btn-stop:hover:not(:disabled) {
+      background: #c62828;
+    }
+
     #send-btn:disabled {
       background: #adb5bd;
       cursor: not-allowed;
@@ -1868,6 +1876,22 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       margin-bottom: 16px;
       border: 1px solid #fecaca;
       border-left: 4px solid var(--danger);
+    }
+
+    .message.system {
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .message.system .message-content {
+      max-width: none;
+      background: #fff8e1;
+      color: #8a6d3b;
+      border: 1px solid #f3d28b;
+      border-radius: 999px;
+      box-shadow: none;
+      font-size: 0.82rem;
+      padding: 8px 14px;
     }
 
     /* Google Data Commons Footer */
@@ -2888,6 +2912,12 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       let mcpConnected = false;
       let conversationHistory = [];
       let isProcessing = false;
+      let activeChatAbortController = null;
+      let stopRequested = false;
+      let activeTurnUserText = '';
+      let activeTurnUserMessageEl = null;
+      let activeTurnAssistantMessageEl = null;
+      let sendBtnMode = 'send';
       // Thinking level config for Gemini 3 models (values: minimal, low, medium, high or budget number)
       let mcpThinkingLevel = localStorage.getItem('mcp_thinking_level') || 'low';
       let synthesisThinkingLevel = localStorage.getItem('synthesis_thinking_level') || 'low';
@@ -3697,8 +3727,9 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           const contentWidth = pageWidth - (margin * 2);
           let yPosition = margin;
 
-          // Get all messages (skip welcome message)
-          const messages = document.querySelectorAll('#chat-messages .message');
+          // Get messages eligible for export
+          const messages = Array.from(document.querySelectorAll('#chat-messages .message'))
+            .filter(messageEl => messageEl.getAttribute('data-export-exclude') !== 'true');
 
           if (messages.length === 0) {
             alert('No messages to export. Start a conversation first!');
@@ -4363,6 +4394,16 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       const kbEnabledCheckbox = document.getElementById('kb-enabled');
       const saveConfigBtn = document.getElementById('save-config');
       const configStatus = document.getElementById('config-status');
+      const sendBtnSendIcon = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      `;
+      const sendBtnStopIcon = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="6" y="6" width="12" height="12" rx="1"></rect>
+        </svg>
+      `;
 
       // New sidebar elements
       const leftSidebar = document.getElementById('left-sidebar');
@@ -4418,6 +4459,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
             configSource = e.target.value;
             localStorage.setItem('config_source', configSource);
             updateConfigSourceUI();
+            setLiveChatControls(false);
             console.log(`Config source changed to: ${configSource}`);
           });
         });
@@ -4446,7 +4488,13 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         // Event listeners
         saveConfigBtn.addEventListener('click', saveConfig);
         document.getElementById('reset-prompts')?.addEventListener('click', resetPromptsToDefaults);
-        sendBtn.addEventListener('click', sendMessage);
+        sendBtn.addEventListener('click', () => {
+          if (sendBtnMode === 'stop') {
+            stopCurrentChat();
+            return;
+          }
+          sendMessage();
+        });
         chatInput.addEventListener('keydown', handleKeyDown);
         chatInput.addEventListener('input', autoResize);
 
@@ -4455,6 +4503,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         if (exportChatBtn) {
           exportChatBtn.addEventListener('click', exportChatToPdf);
         }
+        setSendButtonMode('send');
 
         // Disclaimer close button
         const disclaimerClose = document.getElementById('disclaimer-close');
@@ -4783,6 +4832,63 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         if (brandingHeader) {
           brandingHeader.classList.remove('inactive');
         }
+        setLiveChatControls(false);
+      }
+
+      function setSendButtonMode(mode) {
+        if (!sendBtn) return;
+        sendBtnMode = mode === 'stop' ? 'stop' : 'send';
+        const isStopMode = sendBtnMode === 'stop';
+        sendBtn.classList.toggle('send-btn-stop', isStopMode);
+        sendBtn.title = isStopMode ? 'Stop response' : 'Send message';
+        sendBtn.setAttribute('aria-label', isStopMode ? 'Stop response' : 'Send message');
+        sendBtn.innerHTML = isStopMode ? sendBtnStopIcon : sendBtnSendIcon;
+      }
+
+      function setLiveChatControls(isLive) {
+        const isBackendLive = isLive && configSource === 'backend';
+        if (isBackendLive) {
+          sendBtn.disabled = false;
+          setSendButtonMode('stop');
+          return;
+        }
+        setSendButtonMode('send');
+      }
+
+      function clearActiveTurnState() {
+        activeChatAbortController = null;
+        stopRequested = false;
+        activeTurnUserText = '';
+        activeTurnUserMessageEl = null;
+        activeTurnAssistantMessageEl = null;
+      }
+
+      function markActiveTurnStopped() {
+        const stoppedEls = [activeTurnUserMessageEl, activeTurnAssistantMessageEl];
+        for (const messageEl of stoppedEls) {
+          if (!messageEl) continue;
+          messageEl.setAttribute('data-turn-state', 'stopped');
+          messageEl.setAttribute('data-export-exclude', 'true');
+        }
+      }
+
+      function addSystemNotice(message) {
+        const noticeEl = document.createElement('div');
+        noticeEl.className = 'message system';
+        noticeEl.setAttribute('data-export-exclude', 'true');
+        const contentEl = document.createElement('div');
+        contentEl.className = 'message-content';
+        contentEl.textContent = message;
+        noticeEl.appendChild(contentEl);
+        chatMessages.appendChild(noticeEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return noticeEl;
+      }
+
+      function stopCurrentChat() {
+        if (configSource !== 'backend' || !isProcessing || !activeChatAbortController) return;
+        stopRequested = true;
+        activeChatAbortController.abort();
       }
 
       // ============================================================
@@ -4836,7 +4942,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
       /**
        * Backend streaming chat - calls /api/chat/stream endpoint
        */
-      async function backendChatStream(userMessage, streamingMessage) {
+      async function backendChatStream(userMessage, streamingMessage, requestOptions = {}) {
         console.log('=== Backend Chat Stream ===');
         clearToolCalls();
 
@@ -4859,6 +4965,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            signal: requestOptions.signal,
             body: JSON.stringify({
               message: userMessage,
               history: conversationHistory.slice(-20),  // Last 20 messages
@@ -5486,7 +5593,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         currentUserQuery = message;
 
         // Show user message
-        addMessage('user', message);
+        const userMessageEl = addMessage('user', message);
 
         // Clear input
         chatInput.value = '';
@@ -5495,7 +5602,7 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         // Start processing
         isProcessing = true;
         currentDataStatus = null;  // Reset data status for new message
-        sendBtn.disabled = true;
+        sendBtn.disabled = configSource !== 'backend';
         chatInput.disabled = true;
         // Stop voice input if recording and disable mic controls
         stopVoiceInput();
@@ -5511,15 +5618,25 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
         // ============================================================
         if (configSource === 'backend') {
           console.log('=== BACKEND MODE: Using proxy server for Gemini calls ===');
+          activeChatAbortController = new AbortController();
+          stopRequested = false;
+          activeTurnUserText = userMessage;
+          activeTurnUserMessageEl = userMessageEl;
+          activeTurnAssistantMessageEl = null;
+          setLiveChatControls(true);
+          let streamingMessage = null;
 
           try {
             // Remove typing indicator and create streaming message
             typingEl.remove();
-            const streamingMessage = createStreamingMessage();
+            streamingMessage = createStreamingMessage();
+            activeTurnAssistantMessageEl = streamingMessage.getElement();
             streamingMessage.setText('Agent is thinking...');
 
             // Call backend streaming API
-            const result = await backendChatStream(userMessage, streamingMessage);
+            const result = await backendChatStream(userMessage, streamingMessage, {
+              signal: activeChatAbortController.signal
+            });
 
             // Finalize the message
             streamingMessage.finalize();
@@ -5561,19 +5678,32 @@ When you receive **RAW MCP TOOL RESULTS**, you MUST:
             }
 
           } catch (err) {
-            console.error('Backend chat error:', err);
-            typingEl.remove();
-            addMessage('assistant', `Error: ${err.message}. Please check if the backend server is running.`);
+            const isAbortError = err?.name === 'AbortError' || /abort/i.test(err?.message || '');
+            if (stopRequested && isAbortError) {
+              if (streamingMessage) {
+                streamingMessage.finalize();
+              }
+              markActiveTurnStopped();
+              addSystemNotice('Chat has stopped.');
+              chatInput.value = activeTurnUserText;
+              autoResize();
+            } else {
+              console.error('Backend chat error:', err);
+              typingEl.remove();
+              addMessage('assistant', `Error: ${err.message}. Please check if the backend server is running.`);
+            }
           } finally {
             isProcessing = false;
             sendBtn.disabled = false;
             chatInput.disabled = false;
+            setLiveChatControls(false);
             if (micBtn && SpeechRecognition) {
               micBtn.disabled = false;
               const langSelect = document.getElementById('voice-lang-select');
               if (langSelect) langSelect.disabled = false;
             }
             chatInput.focus();
+            clearActiveTurnState();
           }
           return;
         }
@@ -5860,6 +5990,7 @@ ${rawResultsJson}
 
         chatMessages.appendChild(messageEl);
         chatMessages.scrollTop = chatMessages.scrollHeight;
+        return messageEl;
       }
 
       // Create a streaming message bubble that can be updated
