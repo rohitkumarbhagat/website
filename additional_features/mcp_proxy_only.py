@@ -122,10 +122,24 @@ def inject_datetime(prompt: str) -> str:
     return prompt.replace('{{CURRENT_DATETIME}}', get_current_datetime_ist())
 
 
-def get_api_keys() -> list:
-    """Load API keys from config (list or single key for backward compat)."""
+def get_api_keys(demo_mode: bool = False) -> list:
+    """Load API keys from config (list or single key for backward compat).
+
+    Args:
+        demo_mode: If True, returns demo_api_keys for internal demo usage.
+                   Demo keys are reserved for events/demos and won't be
+                   affected by regular traffic rate limits.
+    """
     config = load_config()
     gemini_config = config.get("gemini", {})
+
+    if demo_mode:
+        demo_keys = gemini_config.get("demo_api_keys", [])
+        if demo_keys:
+            logger.info(f"Using demo API keys pool ({len(demo_keys)} keys)")
+            return demo_keys
+        logger.warning("Demo mode requested but no demo_api_keys configured, falling back to regular keys")
+
     keys = gemini_config.get("api_keys", [])
     if not keys:
         # Fallback to single api_key for backward compatibility
@@ -787,7 +801,8 @@ def gemini_request(
     response_schema: dict = None,
     stream: bool = False,
     session_logger: Optional[SessionLogger] = None,
-    include_thoughts: bool = False
+    include_thoughts: bool = False,
+    demo_mode: bool = False
 ) -> Generator | dict:
     """Make a request to the Gemini API with key rotation and retry.
 
@@ -803,6 +818,7 @@ def gemini_request(
         session_logger: Optional SessionLogger for comprehensive logging
         include_thoughts: If True (and stream=True), yields dicts with 'type' and 'content'
                          for both thoughts and text. If False, yields plain text strings.
+        demo_mode: If True, uses demo API keys reserved for internal demos.
 
     Returns:
         If stream=False: dict with response
@@ -812,8 +828,8 @@ def gemini_request(
     config = load_config()
     api_base = config.get("gemini", {}).get("api_base", "https://generativelanguage.googleapis.com/v1beta/models")
 
-    # Get all available keys
-    all_keys = get_api_keys()
+    # Get all available keys (demo or regular based on mode)
+    all_keys = get_api_keys(demo_mode=demo_mode)
     if not all_keys:
         return {"error": "No Gemini API keys configured in config.json"}
 
@@ -1015,7 +1031,8 @@ def gemini_request_with_thought_streaming(
     thinking_level: str = None,
     response_schema: dict = None,
     session_logger: Optional[SessionLogger] = None,
-    thought_callback: callable = None
+    thought_callback: callable = None,
+    demo_mode: bool = False
 ) -> dict:
     """Make a streaming Gemini request, calling thought_callback for thoughts but returning complete response.
 
@@ -1033,6 +1050,7 @@ def gemini_request_with_thought_streaming(
         session_logger: Optional SessionLogger for comprehensive logging
         thought_callback: Optional callback function called with each thought chunk.
                          Signature: callback(thought_text: str) -> None
+        demo_mode: If True, uses demo API keys reserved for internal demos.
 
     Returns:
         dict: Complete response (same format as non-streaming gemini_request)
@@ -1040,8 +1058,8 @@ def gemini_request_with_thought_streaming(
     config = load_config()
     api_base = config.get("gemini", {}).get("api_base", "https://generativelanguage.googleapis.com/v1beta/models")
 
-    # Get all available keys
-    all_keys = get_api_keys()
+    # Get all available keys (demo or regular based on mode)
+    all_keys = get_api_keys(demo_mode=demo_mode)
     if not all_keys:
         return {"error": "No Gemini API keys configured in config.json"}
 
@@ -1205,7 +1223,8 @@ def execute_mcp_tool_loop(
     max_iterations: int = 5,
     session_logger: Optional[SessionLogger] = None,
     effective_config: dict = None,
-    thought_callback: callable = None
+    thought_callback: callable = None,
+    demo_mode: bool = False
 ) -> tuple:
     """Execute the MCP tool calling loop with optional thought streaming.
 
@@ -1217,6 +1236,7 @@ def execute_mcp_tool_loop(
         effective_config: Optional config dict with query param overrides applied
         thought_callback: Optional callback for streaming thought chunks.
                          Signature: callback(thought_text: str) -> None
+        demo_mode: If True, uses demo API keys reserved for internal demos.
 
     Returns:
         tuple: (tool_results_text, tool_calls_list, final_response_text)
@@ -1262,7 +1282,8 @@ def execute_mcp_tool_loop(
             temperature=1.0,
             thinking_level=thinking_level,
             session_logger=session_logger,
-            thought_callback=thought_callback
+            thought_callback=thought_callback,
+            demo_mode=demo_mode
         )
 
         if "error" in response:
@@ -1348,11 +1369,14 @@ def execute_mcp_tool_loop(
     return tool_results_text, tool_calls_list, "Max tool iterations reached"
 
 
-def get_api_key_filestore_mapping() -> dict:
+def get_api_key_filestore_mapping(demo_mode: bool = False) -> dict:
     """Build mapping of API key -> filestore from config.
 
     Each API key in gemini.api_keys maps to the filestore at the same index
     in gemini.filestores array.
+
+    Args:
+        demo_mode: If True, uses demo_api_keys and demo_filestores for mapping.
 
     Returns:
         dict mapping api_key -> filestore_id
@@ -1360,8 +1384,14 @@ def get_api_key_filestore_mapping() -> dict:
     config = load_config()
     gemini_config = config.get("gemini", {})
 
-    api_keys = gemini_config.get("api_keys", [])
-    filestores = gemini_config.get("filestores", [])
+    if demo_mode:
+        api_keys = gemini_config.get("demo_api_keys", [])
+        filestores = gemini_config.get("demo_filestores", [])
+        if api_keys:
+            logger.info(f"Using demo filestore mapping ({len(api_keys)} keys)")
+    else:
+        api_keys = gemini_config.get("api_keys", [])
+        filestores = gemini_config.get("filestores", [])
 
     # Build the mapping - each key maps to filestore at same index
     mapping = {}
@@ -1376,7 +1406,7 @@ def get_api_key_filestore_mapping() -> dict:
     return mapping
 
 
-def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None, thought_callback: callable = None) -> dict:
+def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] = None, thought_callback: callable = None, demo_mode: bool = False) -> dict:
     """Execute Knowledge Base query using file search with key rotation and thought streaming.
 
     Each API key automatically uses its paired filestore from the config mapping.
@@ -1386,6 +1416,7 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
         session_logger: Optional SessionLogger for logging
         thought_callback: Optional callback for streaming thought chunks.
                          Signature: callback(thought_text: str) -> None
+        demo_mode: If True, uses demo API keys and filestores reserved for internal demos.
 
     Returns:
         dict with keys:
@@ -1401,15 +1432,15 @@ def execute_kb_query(user_message: str, session_logger: Optional[SessionLogger] 
     kb_prompt = config.get("prompts", {}).get("kb", "")
     kb_model = config.get("gemini", {}).get("kb_model", "gemini-3-flash-preview")
 
-    # Get API key -> filestore mapping
-    key_filestore_map = get_api_key_filestore_mapping()
+    # Get API key -> filestore mapping (demo or regular based on mode)
+    key_filestore_map = get_api_key_filestore_mapping(demo_mode=demo_mode)
 
     if not key_filestore_map:
         logger.warning("No API key to filestore mapping configured")
         return {"response": "", "sources": []}
 
-    # Get all available keys
-    all_keys = get_api_keys()
+    # Get all available keys (demo or regular based on mode)
+    all_keys = get_api_keys(demo_mode=demo_mode)
     if not all_keys:
         return {"response": "", "sources": []}
 
@@ -1753,6 +1784,7 @@ def chat_stream():
     query_params = {}
     secret_key = request.args.get("key", "")
     expected_key = get_query_param_key()
+    demo_mode = False
 
     if secret_key == expected_key:
         # Valid key - extract override params
@@ -1766,6 +1798,11 @@ def chat_stream():
         query_params = {k: v for k, v in query_params.items() if v is not None}
         if query_params:
             logger.info(f"Query params override applied: {query_params}")
+
+        # Check for demo mode - uses reserved API keys for internal demos
+        if request.args.get("demo", "").lower() == "true":
+            demo_mode = True
+            logger.info("Demo mode ENABLED - using reserved demo API keys")
     elif secret_key:
         # Invalid key provided - log warning but continue with defaults
         logger.warning(f"Invalid query param key provided, ignoring overrides")
@@ -1788,6 +1825,10 @@ def chat_stream():
         # Log query params if present
         if query_params:
             session_logger.log("QUERY_PARAMS_OVERRIDE", query_params)
+
+        # Log demo mode if enabled
+        if demo_mode:
+            session_logger.log("DEMO_MODE_ENABLED", {"using_demo_keys": True})
 
         # Log user message
         session_logger.log_user_message(user_message, len(history))
@@ -1847,7 +1888,8 @@ def chat_stream():
                     mcp_result_holder['results'], mcp_result_holder['tool_calls'], mcp_result_holder['text'] = execute_mcp_tool_loop(
                         user_message, history, session_logger=session_logger,
                         effective_config=effective_config,
-                        thought_callback=lambda t: thought_callback(t, 'mcp')
+                        thought_callback=lambda t: thought_callback(t, 'mcp'),
+                        demo_mode=demo_mode
                     )
                 except Exception as e:
                     logger.error(f"MCP thread error: {e}")
@@ -1914,7 +1956,8 @@ def chat_stream():
                 try:
                     kb_result = execute_kb_query(
                         user_message, session_logger=session_logger,
-                        thought_callback=lambda t: thought_callback(t, 'kb')
+                        thought_callback=lambda t: thought_callback(t, 'kb'),
+                        demo_mode=demo_mode
                     )
                     kb_result_holder['response'] = kb_result.get("response", "")
                     kb_result_holder['sources'] = kb_result.get("sources", [])
@@ -1997,7 +2040,8 @@ Please provide a comprehensive response combining all available information."""
                 thinking_level=thinking_level,
                 stream=True,
                 session_logger=session_logger,
-                include_thoughts=True  # Enable thought streaming
+                include_thoughts=True,  # Enable thought streaming
+                demo_mode=demo_mode
             )
 
             if isinstance(stream_gen, dict) and "error" in stream_gen:
